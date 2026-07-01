@@ -1,0 +1,21 @@
+<map id="src/deletemenu.cpp" name="src/deletemenu.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="63,5,214,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,79,115,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,33,96,70,92,67,126,29"/>
+<area shape="rect" id="Node000003" href="$deletemenu_8hpp.html" title=" " alt="" coords="139,79,267,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,29,185,67,181,70,147,33"/>
+<area shape="rect" id="Node000004" href="$menu_8hpp.html" title=" " alt="" coords="62,225,149,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="177,106,146,125,120,153,109,182,106,212,101,211,104,181,115,151,143,121,174,102"/>
+<area shape="rect" id="Node000007" href="$playermanager_8hpp.html" title=" " alt="" coords="129,152,277,177"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="205,104,205,138,200,138,200,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="301,152,470,177"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="233,102,344,144,342,149,231,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,299,141,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="102,252,86,287,82,285,98,250"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="165,299,224,324"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="121,249,171,288,168,292,118,253"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="189,180,134,219,131,215,185,175"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="205,178,199,285,193,285,199,178"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="233,225,295,251"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="215,176,247,213,243,217,211,179"/>
+</map>

@@ -1,0 +1,44 @@
+\doxysection{principalmenu.\+hpp}
+\hypertarget{principalmenu_8hpp_source}{}\label{principalmenu_8hpp_source}\index{include/principalmenu.hpp@{include/principalmenu.hpp}}
+\mbox{\hyperlink{principalmenu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PRINCIPALMENU\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PRINCIPALMENU\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_font.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_audio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}\ \ \ \ \ \ \ }
+\DoxyCodeLine{00007\ \ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8hpp}{menu.hpp}}"{}}\ \ \ \ \ \ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPrincipalMenu}{PrincipalMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classPrincipalMenu_a2a73fe54d727a9f3add85ab9a5501d1e}{background}};}
+\DoxyCodeLine{00013\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classPrincipalMenu_a6c36b8704382967455afd40b6b9c6fe7}{fontMenu}};}
+\DoxyCodeLine{00014\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classPrincipalMenu_a0fd5ee71af3aba2c44705408a69235a1}{fontTitle}};}
+\DoxyCodeLine{00015\ \ \ \ \ ALLEGRO\_AUDIO\_STREAM*\ \mbox{\hyperlink{classPrincipalMenu_aa367ca4f5a51d8bd873a5276a496cea1}{musicMenu}};}
+\DoxyCodeLine{00016\ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<Button>\ \mbox{\hyperlink{classPrincipalMenu_ad49ad439bb986e30678b1a06b236693b}{buttons}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classPrincipalMenu_a2930ffffadc2f624a894229bb5eab672}{backgroundX}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classPrincipalMenu_ae1735c2bda5f12e7c801a65df77eb09b}{nextState}};\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPrincipalMenu_a8438087530285fbd3418f9f8e36d53d3}{CheckCollision}}(\textcolor{keywordtype}{float}\ mouse\_x,\ \textcolor{keywordtype}{float}\ mouse\_y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structButton}{Button}}\&\ button);\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \mbox{\hyperlink{classPrincipalMenu}{PrincipalMenu}}(ALLEGRO\_DISPLAY*\ display);}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classPrincipalMenu_ad5ebe9a938b11eb97c8a5e9efbbb1258}{\string~PrincipalMenu}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPrincipalMenu_a45c1c1a43c4252a68f63c64f574110b0}{ProcessEvent}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPrincipalMenu_aa7110886b23633dbafb56fd889961278}{Draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classPrincipalMenu_a5f27f56d4f22a930c38ad3ffd78c0360}{getBackground}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPrincipalMenu_a2a73fe54d727a9f3add85ab9a5501d1e}{background}};\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classPrincipalMenu_a0920176d7143568ee3111f59f73b0396}{getFont}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPrincipalMenu_a6c36b8704382967455afd40b6b9c6fe7}{fontMenu}};\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Button>\&\ \mbox{\hyperlink{classPrincipalMenu_a99108473bf12dc2b742b23d3d1a9d7ab}{getButtons}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPrincipalMenu_ad49ad439bb986e30678b1a06b236693b}{buttons}};\ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classPrincipalMenu_a985385d089888404b4102ed9f7f9b9b1}{getBackgroundX}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPrincipalMenu_a2930ffffadc2f624a894229bb5eab672}{backgroundX}};\ \}}
+\DoxyCodeLine{00032\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classPrincipalMenu_a049c5659a1f03e37319cf80a0f2b82eb}{getFontTitle}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classPrincipalMenu_a0fd5ee71af3aba2c44705408a69235a1}{fontTitle}};\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classPrincipalMenu_af8c88396e1652f9d4ce8e930350dc15c}{getNextState}}()\ \textcolor{keyword}{override};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPrincipalMenu_ae3f9b3206a32d89bc1c04b499a4c97be}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPrincipalMenu_ad98c8c9272e704eeb86e8c831d9cb05a}{Update}}();}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

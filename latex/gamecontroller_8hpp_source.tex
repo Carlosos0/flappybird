@@ -1,0 +1,120 @@
+\doxysection{gamecontroller.\+hpp}
+\hypertarget{gamecontroller_8hpp_source}{}\label{gamecontroller_8hpp_source}\index{include/gamecontroller.hpp@{include/gamecontroller.hpp}}
+\mbox{\hyperlink{gamecontroller_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMECONTROLLER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMECONTROLLER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_image.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_font.h>}\ \ \ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_ttf.h>}\ \ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_primitives.h>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ambience_8hpp}{ambience.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bird_8hpp}{bird.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crash_8hpp}{crash.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{deletemenu_8hpp}{deletemenu.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{floor_8hpp}{floor.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gameovermenu_8hpp}{gameovermenu.hpp}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{graphloader_8hpp}{graphloader.hpp}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input_8hpp}{input.hpp}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{nicknameinput_8hpp}{nicknameinput.hpp}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipeControl_8hpp}{pipeControl.hpp}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{playermanager_8hpp}{playermanager.hpp}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{principalmenu_8hpp}{principalmenu.hpp}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{register_8hpp}{register.hpp}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{score_8hpp}{score.hpp}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a5e3732f3a271b76aec1e6ab277cfc830}{mainmenu}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285aaf1c6767a286163a6bf8ac8b05a98d07}{NicknameInput}},}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8100f7774ec83dc0d1f62057ba5a73c1}{PlayerRegister}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac33e404a441c6ba9648f88af3c68a1ca}{Statistics}},}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a7eda2dbe357294532f593ce2f3b10344}{DeletePlayer}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac9dbb2b7c84159b632d71e512eba8428}{Playing}},}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ae99180abf47a8b3a856e0bcb2656990a}{Paused}},}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3}{GameOver}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a2e270660f0b67aeeedd788ccff7f29d2}{CountDown}}}
+\DoxyCodeLine{00036\ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgamecontroller}{gamecontroller}}\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgamecontroller_a19d2914fe343eb1f15cfe87371ba241d}{SCREEN\_W}}\ =\ 800;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgamecontroller_a417956d1b30204bbca9de6804610aa29}{SCREEN\_H}}\ =\ 600;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a5c30f349cdf8308c132693772380127d}{gameBirdWidth}}\ =\ 51.0f;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a4fe4915ea2a65ba7d7e57a23ab692712}{gameBirdHeight}}\ =\ 36.0f;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_af2cc94c7e64014974e491468da756298}{gamePipeWidth}}\ =\ 90.0f;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a19f5882299bc3a768603687b657cfd40}{gamePipeHeight}}\ =\ 400.0f;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a3ed06c438c2e33d1aec600b6479db3da}{pipeGap}}\ =\ 150.0f;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a24153ab7861dd6acb526e4f80b68b97f}{pipeDistance}}\ =\ 350.0f;}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a819df6b7420c5c6559cf3c04c8110a17}{gameFloorHeight}}\ =\ 80.0f;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classgamecontroller_a1a98e3ae7a7457f605bd1b7f6057deeb}{FPS}}\ =\ 60.0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgamecontroller_ae84fc2f7a344abfd3855af4c2ca6f9d2}{playing}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgamecontroller_ad511226cd7025110b0483f693085ca50}{redraw}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285}{GameState}}\ \mbox{\hyperlink{classgamecontroller_ab7193b8b43e4f5fb4026c59265e99ebe}{currentState}}\ =\ \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a5e3732f3a271b76aec1e6ab277cfc830}{GameState::mainmenu}};}
+\DoxyCodeLine{00057\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ ALLEGRO\_DISPLAY\ *\mbox{\hyperlink{classgamecontroller_a6bc700ae7d933a0f683bd5be5b949952}{display}};}
+\DoxyCodeLine{00059\ \ \ \ \ ALLEGRO\_EVENT\_QUEUE\ *\mbox{\hyperlink{classgamecontroller_a15a555356cdfcd3c93f07394fa9e54ba}{queue}};}
+\DoxyCodeLine{00060\ \ \ \ \ ALLEGRO\_TIMER\ *\mbox{\hyperlink{classgamecontroller_a4161e52967e9fcee6d775aa5a93ad882}{timer}};}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classgamecontroller_abcca09caa5059b8f1fa6984b78c692f0}{birdImg}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00063\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classgamecontroller_a3fd0adae83c9425baf8046b834d2aa27}{pipeImg}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00064\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classgamecontroller_a2f7bbbbe6dac0d83512b0edd938a7220}{bkgImg}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00065\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classgamecontroller_a3b84ab636e1abcba4bc7187d24720d49}{floorImg}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00066\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classgamecontroller_a55d06a3da9adea1c338661631cc735b9}{menuPrincipalImg}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00067\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classgamecontroller_a3a9509e73f9037e60c11342a65825a12}{loadingFont}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00068\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classgamecontroller_a3397c1cc135b638b4cef0e7bd6fd62be}{scoreFont}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00069\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classgamecontroller_a96f2bf3a559c26c72de32ab963de3e15}{menuFont}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00070\ \ }
+\DoxyCodeLine{00071\ \ \ \ \ std::shared\_ptr<ambience>\ \mbox{\hyperlink{classgamecontroller_addfaf5b0d4b65d94d24e7823f2e1d2e4}{gameAmbience}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00072\ \ \ \ \ std::unique\_ptr<bird>\ \mbox{\hyperlink{classgamecontroller_a0ee45e5c93b437c11c636e2b4cb4c748}{gameBird}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00073\ \ \ \ \ std::unique\_ptr<pipeControl>\ \mbox{\hyperlink{classgamecontroller_a413b71be58c351e920e0da23c12bc6fd}{gamePControl}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00074\ \ \ \ \ std::shared\_ptr<floor>\ \mbox{\hyperlink{classgamecontroller_a93e4eaba1b4eb0ca6730c11fa91f0448}{gameFloor}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00075\ \ \ \ \ std::unique\_ptr<score>\ \mbox{\hyperlink{classgamecontroller_a09ab9d383c13a88f074f94c76d84566f}{gameScore}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00076\ \ \ \ \ std::unique\_ptr<Crash>\ \mbox{\hyperlink{classgamecontroller_a1b8fcf874bde4859e1a01449c85417f5}{gameCrash}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00077\ \ \ \ \ std::unique\_ptr<PrincipalMenu>\ \mbox{\hyperlink{classgamecontroller_a35178c09a370e5e10f0dfe8bebe3e261}{gameMenu}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00078\ \ \ \ \ std::unique\_ptr<GameOverMenu>\ \mbox{\hyperlink{classgamecontroller_a4e818babb34900a63329fb47a495747a}{gameoverMenu}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00079\ \ \ \ \ std::unique\_ptr<Cadastro>\ \mbox{\hyperlink{classgamecontroller_a2ae048f78b97e9ac868fee225453e5fe}{registerMenu}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00080\ \ \ \ \ std::unique\_ptr<ListPlayers>\ \mbox{\hyperlink{classgamecontroller_a026e1040f0a037621e2a82d45d69d0ad}{listPlayersMenu}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00081\ \ \ \ \ std::unique\_ptr<PlayerManager>\ \mbox{\hyperlink{classgamecontroller_a24ba98f92e4ccff0780cf04f41aab008}{playerManager}};}
+\DoxyCodeLine{00082\ \ \ \ \ std::string\ \mbox{\hyperlink{classgamecontroller_a55a0eca2758043031f9abc2244a2a4dd}{currentPlayerNickname}};}
+\DoxyCodeLine{00083\ \ \ \ \ std::unique\_ptr<NicknameInput>\ \mbox{\hyperlink{classgamecontroller_a642a0e772c16c31a2da56bcdc807b213}{nicknameInputMenu}};}
+\DoxyCodeLine{00084\ \ \ \ \ std::unique\_ptr<DeleteMenu>\ \mbox{\hyperlink{classgamecontroller_a0557c95371b2fde53c2415cc28c391e5}{deleteMenu}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classgraphloader}{graphloader}}\ \mbox{\hyperlink{classgamecontroller_a518644acc4c381cead7a224e427d67cf}{gameLoader}};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classinput}{input}}\ \mbox{\hyperlink{classgamecontroller_a519a8f7e9f26dea11aecd33e8ccfdb82}{gameInput}};}
+\DoxyCodeLine{00088\ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classgamecontroller_a4e4975bf27c08afcd4d63ce7ac842fbd}{countdownValue}}\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classgamecontroller_ae1f8e013a417aba33030d39eb57eba3b}{countdownStartTime}}\ =\ 0.0;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_a31889cd01f80728a8f2d453d55f9bd2f}{SetupNewGame}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_a6bafc6dba4c4c986f5e2af0c92d1be2a}{StartCountdown}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_ae6347474bcdc5155f7ce90cf6616088c}{UpdateCountdown}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00097\ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classgamecontroller_a9d8408cded919859ab9fd5b04f8003c2}{gamecontroller}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classgamecontroller_a20d76d7314c37ea9480236176b5c513c}{\string~gamecontroller}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgamecontroller_a8f1ccd5477ae337f8e26a02e3ce4e992}{InitTools}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_ab70a3c15ca00747c9816910846d0b138}{EventsProcessor}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event);}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_a7d222c8b738d7606c9c03a8e9adf713d}{Logic}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_a74a45d6f7bc24360a66a83e28a397c3d}{Render}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_a26d6cd87c21055f4e5850d7c0055bae9}{MemoryClear}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamecontroller_aec70b3e81e77a17f4b5fbbc9d50f1d67}{Run}}();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \textcolor{comment}{//\ Getters\ públicos}}
+\DoxyCodeLine{00109\ \ \ \ \ ALLEGRO\_DISPLAY*\ \mbox{\hyperlink{classgamecontroller_aa8040eefefef3ee42940af736cc52d7c}{getDisplay}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ ALLEGRO\_EVENT\_QUEUE*\ \mbox{\hyperlink{classgamecontroller_a134694dc8da86f39adbe37b431963119}{getEventQueue}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \ \ }
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

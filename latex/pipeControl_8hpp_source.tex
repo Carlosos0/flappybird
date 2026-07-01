@@ -1,0 +1,49 @@
+\doxysection{pipe\+Control.\+hpp}
+\hypertarget{pipeControl_8hpp_source}{}\label{pipeControl_8hpp_source}\index{include/pipeControl.hpp@{include/pipeControl.hpp}}
+\mbox{\hyperlink{pipeControl_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PIPECONTROL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PIPECONTROL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{doublepipes_8hpp}{doublepipes.hpp}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classpipeControl}{pipeControl}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ std::vector<std::unique\_ptr<doublepipes>>\ \mbox{\hyperlink{classpipeControl_a067109ce583eed4dda13659a28c4fb7d}{pipeHouse}};}
+\DoxyCodeLine{00015\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classpipeControl_a93d02066dd76f9fe2cce5dd70442513e}{pipeImg}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_a6d8ef4dc4285d0ecd496cfe440265602}{pipeGap}};}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_af3629a94f9953fff34ba3efe52cce4b4}{pipeDistance}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_a7abe9a635ef56c401a608928fd611903}{pipeWidth}};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_ac360f624150d45bcd031eade42fbd2e4}{pipeHeight}};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_af0b68323c354266bdf7345ed0b27e194}{SCREEN\_W}};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_a14cd846f3e1e3e58d670b3b253474e61}{SCREEN\_H}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classpipeControl}{pipeControl}}(ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classpipeControl_a93d02066dd76f9fe2cce5dd70442513e}{pipeImg}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_a6d8ef4dc4285d0ecd496cfe440265602}{pipeGap}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_af3629a94f9953fff34ba3efe52cce4b4}{pipeDistance}},\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ pipeWidht,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_ac360f624150d45bcd031eade42fbd2e4}{pipeHeight}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_af0b68323c354266bdf7345ed0b27e194}{SCREEN\_W}},\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classpipeControl_a14cd846f3e1e3e58d670b3b253474e61}{SCREEN\_H}});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classpipeControl_a66f61f0e6cbbac5c636041530d9806e9}{\string~pipeControl}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::unique\_ptr<doublepipes>>\&\ \mbox{\hyperlink{classpipeControl_aadabfbf6c0031014e2382e028fc92906}{getPipeHouse}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classpipeControl_aac464432cbf28c0bf4fa0f9fe5829360}{RandHCalculator}}();}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classpipeControl_a04db0543cc264610b2d6da7c9bca255d}{WhenSpawn}}();}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpipeControl_a3aae5d00e19c23ade354a93b1e264c1a}{PipeGenerator}}();}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpipeControl_a418d26f5968d0b5d85190ff8734bdcae}{UpdatePos}}();}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classpipeControl_a4c26fe79265aaac6d85bd1daa9d20b39}{DeletePipes}}();}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,35 @@
+\doxysection{playermanager.\+hpp}
+\hypertarget{playermanager_8hpp_source}{}\label{playermanager_8hpp_source}\index{include/playermanager.hpp@{include/playermanager.hpp}}
+\mbox{\hyperlink{playermanager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_MANAGER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_MANAGER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8hpp}{menu.hpp}}"{}}\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlayerManager}{PlayerManager}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classPlayerManager_ada88b7db6806ac537075af2c0bb0a63c}{players}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \mbox{\hyperlink{classPlayerManager_abd39d43b141ce9988fc7f6f0a39437d3}{filename}}\ =\ \textcolor{stringliteral}{"{}jogadores.txt"{}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{//\ Funções\ internas\ para\ carregar\ e\ salvar\ no\ ficheiro}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayerManager_ae8b2d426c37a56a5d20371891807b4c6}{loadPlayersFromFile}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayerManager_aadb91f8f6866ea4a0b4906967581ae46}{savePlayersToFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classPlayerManager_ae093e4e4e7eecdf5b46de72f5827d71d}{PlayerManager}}();\ }
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{classPlayerManager_ab53de6b16914b7591fc2bd3038069ac7}{\string~PlayerManager}}();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ INTERFACE\ PÚBLICA\ -\/-\/-\/}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayerManager_abf9d533f7069aa220268effe7c2e6905}{deletePlayer}}(\textcolor{keyword}{const}\ std::string\&\ nickname);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayerManager_a64a34011995b346faac2fcca8397cbb6}{nicknameExists}}(\textcolor{keyword}{const}\ std::string\&\ nickname)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlayerManager_a24ca28079e3f7477c8ecd7b2e32abefe}{addNewPlayer}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ nickname);}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlayerManager_aba81aed8229d658dafb797dcee2421bb}{updatePlayerScore}}(\textcolor{keyword}{const}\ std::string\&\ nickname,\ \textcolor{keywordtype}{int}\ newScore);}
+\DoxyCodeLine{00026\ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classPlayerManager_ab84fe6b7836f42ad57d18e18c7223cd6}{getRankedPlayers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

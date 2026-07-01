@@ -1,0 +1,49 @@
+\doxysection{register.\+hpp}
+\hypertarget{register_8hpp_source}{}\label{register_8hpp_source}\index{include/register.hpp@{include/register.hpp}}
+\mbox{\hyperlink{register_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REGISTER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REGISTER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_font.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8hpp}{menu.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{playermanager_8hpp}{playermanager.hpp}}"{}}\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCadastro}{Cadastro}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCadastro_a5adee8886813db19dcb535d7d649a3a4}{digitando\_nome}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ std::string\ \mbox{\hyperlink{classCadastro_ab505f6d9b3a94ef9422d3f76ba54fa26}{nome\_atual}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::string\ \mbox{\hyperlink{classCadastro_a8588e8cab6cd5cb0d9930ead31d3064b}{apelido\_atual}};}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ \mbox{\hyperlink{classCadastro_ad396bbefe46cc00c4572908fbd667897}{mensagem}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ ALLEGRO\_DISPLAY*\ \mbox{\hyperlink{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9}{display}};}
+\DoxyCodeLine{00021\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classCadastro_a864993a0d19dd745f2472d8133c06f23}{font}};}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{classPlayerManager}{PlayerManager}}*\ \mbox{\hyperlink{classCadastro_ab9c4a326273b823c1d4dea413cfeffc2}{playerManager}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classCadastro_a5c8b8d8d58e8aabfa111ad6d2b9f5553}{nextState}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{classCadastro}{Cadastro}}(ALLEGRO\_DISPLAY*\ \mbox{\hyperlink{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9}{display}},\ ALLEGRO\_FONT*\ \mbox{\hyperlink{classCadastro_a864993a0d19dd745f2472d8133c06f23}{font}},\ \mbox{\hyperlink{classPlayerManager}{PlayerManager}}*\ manager);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCadastro_a1d26354a8a62e26193d5310aea6ac654}{ProcessEvent}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCadastro_a8c9c44bc7bd59599fb8fb8652e53697e}{Draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCadastro_a51a178a70b0fa586d7839e58445e0c4b}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classCadastro_a1b852a21fa2583a200a0e6bd315dd3af}{getNextState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCadastro_aa3ba09f01fc5bc0340b38e07a8daeb65}{getNomeAtual}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCadastro_ab505f6d9b3a94ef9422d3f76ba54fa26}{nome\_atual}};\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCadastro_af760566ac776d9859acd3621715ed985}{getApelidoAtual}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCadastro_a8588e8cab6cd5cb0d9930ead31d3064b}{apelido\_atual}};\ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classCadastro_a4b622fdb9a87b2a323d42d024aa02f85}{getMensagem}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCadastro_ad396bbefe46cc00c4572908fbd667897}{mensagem}};\ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCadastro_ad811d6a0c3e93c281364307708d5a12a}{isDigitandoNome}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCadastro_a5adee8886813db19dcb535d7d649a3a4}{digitando\_nome}};\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classCadastro_ac595c8120c5248b0fd401742df01c412}{getFont}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCadastro_a864993a0d19dd745f2472d8133c06f23}{font}};\ \}}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

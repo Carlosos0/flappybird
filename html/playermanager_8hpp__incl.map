@@ -1,0 +1,12 @@
+<map id="include/playermanager.hpp" name="include/playermanager.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,204,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,152,89,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,32,77,53,63,80,58,109,58,138,53,138,53,109,58,78,73,50,91,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="73,79,136,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,31,107,65,102,65,102,31"/>
+<area shape="rect" id="Node000004" href="$menu_8hpp.html" title=" " alt="" coords="160,79,247,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,29,178,68,175,73,119,33"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="181,106,96,148,94,143,179,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="135,152,271,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,104,206,138,201,138,201,104"/>
+</map>

@@ -1,0 +1,33 @@
+\doxysection{ambience.\+hpp}
+\hypertarget{ambience_8hpp_source}{}\label{ambience_8hpp_source}\index{include/ambience.hpp@{include/ambience.hpp}}
+\mbox{\hyperlink{ambience_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AMBIENCE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AMBIENCE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vetor_8hpp}{vetor.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classambience}{ambience}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{structvetor}{vetor}}\ \mbox{\hyperlink{classambience_a03220950e5b229817d6d21da19ec5e2c}{gravity}};}
+\DoxyCodeLine{00013\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classambience_a68680b05cb89c652a2301c38fccd6a7f}{background}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classambience}{ambience}}(\mbox{\hyperlink{structvetor}{vetor}}\ \mbox{\hyperlink{classambience_a03220950e5b229817d6d21da19ec5e2c}{gravity}},\ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classambience_a68680b05cb89c652a2301c38fccd6a7f}{background}});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classambience_a7ed4f63e29be48c1fdb658fb866698d2}{\string~ambience}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structvetor}{vetor}}\ \mbox{\hyperlink{classambience_a9f081461e4a263acb0bb59527f50b3fd}{getGravity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classambience_ac8a792da97726a8f13c5ca6ec6ecdef2}{setGravity}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structvetor}{vetor}}\&\ \mbox{\hyperlink{classambience_a03220950e5b229817d6d21da19ec5e2c}{gravity}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classambience_a6fd936873c32afb07bfa590b26c30642}{getBackground}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classambience_a58b12ebbd506b56ee1d379aad76663c0}{setBackground}}(ALLEGRO\_BITMAP*\ \mbox{\hyperlink{classambience_a68680b05cb89c652a2301c38fccd6a7f}{background}});}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

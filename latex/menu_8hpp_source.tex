@@ -1,0 +1,43 @@
+\doxysection{menu.\+hpp}
+\hypertarget{menu_8hpp_source}{}\label{menu_8hpp_source}\index{include/menu.hpp@{include/menu.hpp}}
+\mbox{\hyperlink{menu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MENU\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MENU\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2a6adf97f83acf6453d4a6a4b1070f3754}{None}},}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2a63d72051e901c069f8aa1b32aa0c43bb}{Game}},}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2a8100f7774ec83dc0d1f62057ba5a73c1}{PlayerRegister}},}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2ac33e404a441c6ba9648f88af3c68a1ca}{Statistics}},}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2a7eda2dbe357294532f593ce2f3b10344}{DeletePlayer}},}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2adfe4d9750046cf75e19b239d0063bc44}{RestartGame}},}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2a1f238663d8aaa14427722d63075673c4}{GoToMainMenu}},}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2afef46e5063ce3dc78b8ae64fa474241d}{Exit}}}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structButton}{Button}}\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structButton_ad34acf9a6dbb7d571abea5b2a495dfc9}{x}},\ \mbox{\hyperlink{structButton_a5f778699fdea1315be6fce3754f9c9d5}{y}},\ \mbox{\hyperlink{structButton_aadac7dd7b0a0350f354a947ab096c532}{width}},\ \mbox{\hyperlink{structButton_ab646f3e8a3cb3e76e26391ef94a2f9d7}{height}};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structButton_a63be2602c7e7ca11f8daf4279c618469}{text}};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{structButton_ad31b4b480969ce4d5d7591c2e462e0d6}{action}};\ }
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlayer}{Player}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ std::string\ \mbox{\hyperlink{structPlayer_af9c920fabaafdeb7961a645315b521ff}{name}};}
+\DoxyCodeLine{00025\ \ \ \ \ std::string\ \mbox{\hyperlink{structPlayer_ac8b94ca0d4d53d7cd5f5957b74003aeb}{nickname}};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlayer_ace6abae8d66534ad0a1fd6458f786a6e}{score}};}
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classMenu_a8fc4104b08c9a24d1dab18b82a82b7da}{\string~Menu}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_abf38fa7317f666dd5854e6c0d73f30f7}{ProcessEvent}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event)\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_aa75c508342e6c2509fe064b8986d3a6f}{Draw}}()\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classMenu_ad34f5745a27c492a42f4c2146910a16e}{getNextState}}()\ =\ 0;\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMenu_a7f729857572363927907fc4a62bd2095}{Reset}}()\ =\ 0;}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

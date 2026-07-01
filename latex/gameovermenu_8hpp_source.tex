@@ -1,0 +1,40 @@
+\doxysection{gameovermenu.\+hpp}
+\hypertarget{gameovermenu_8hpp_source}{}\label{gameovermenu_8hpp_source}\index{include/gameovermenu.hpp@{include/gameovermenu.hpp}}
+\mbox{\hyperlink{gameovermenu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GAMEOVERMENU\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GAMEOVERMENU\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_font.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8hpp}{menu.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGameOverMenu}{GameOverMenu}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ std::vector<Button>\ \mbox{\hyperlink{classGameOverMenu_a414f55bd27397b7f3158cbee39419884}{buttons}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classGameOverMenu_a87125b9952b3d66640f3cb29b60a9097}{nextState}};}
+\DoxyCodeLine{00015\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classGameOverMenu_a56e25f8414c4488d35ab04b10d3280cb}{font}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGameOverMenu_a8503707ccb2dafd9ab07b6e108e3c1fa}{CheckCollision}}(\textcolor{keywordtype}{float}\ mouse\_x,\ \textcolor{keywordtype}{float}\ mouse\_y,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structButton}{Button}}\&\ button);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \mbox{\hyperlink{classGameOverMenu_a4dca1c9928485b1c726112992115bbf8}{GameOverMenu}}();}
+\DoxyCodeLine{00021\ \ \mbox{\hyperlink{classGameOverMenu_a4d1cc3861255f9d4f3f6da073259f0f1}{\string~GameOverMenu}}();}
+\DoxyCodeLine{00022\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameOverMenu_aa3fd09fd68b16ef7bf1be714e1ccb8ef}{ProcessEvent}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameOverMenu_a57ade4cf495f83233fdb3be736a5e0b2}{Draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGameOverMenu_abf1560e3bdb5b6422d2c692adb85c38a}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classGameOverMenu_a42b10f4b565bbc6d8afd2e70895d0995}{getNextState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Button>\&\ \mbox{\hyperlink{classGameOverMenu_a7b51e45e5556f6f35c2b2ec037c1956d}{getButtons}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGameOverMenu_a414f55bd27397b7f3158cbee39419884}{buttons}};\ \}}
+\DoxyCodeLine{00029\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classGameOverMenu_a7e599f6ba82a7a9367f9ec3138424647}{getFont}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classGameOverMenu_a56e25f8414c4488d35ab04b10d3280cb}{font}};\ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

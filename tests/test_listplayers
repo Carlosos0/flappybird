@@ -1,0 +1,74 @@
+#include "doctest.h"
+#include "listplayers.hpp"
+#include "menu.hpp"
+#include "playermanager.hpp"
+
+#include <fstream>
+#include <memory>
+
+// Função que cria um evento de teclado simulando a tecla pressionada com o código passado ("finge que uma tela foi pressionada"). Isso é usado para testar o comportamento da lista de jogadores quando algumas teclas são apertadas.
+ALLEGRO_EVENT auxEvent(int keycode) {
+    ALLEGRO_EVENT event;
+    event.type = ALLEGRO_EVENT_KEY_DOWN;  // Define que o evento vai ser a tecla pressionada
+    event.keyboard.keycode = keycode;     // Define qual tecla foi pressionada
+    return event;
+}
+
+TEST_CASE ("Testando a classe listplayers:") {
+    // Cria e escreve no arquivo "jogadores.txt" três jogadores para usar nos testes. 
+    std::ofstream ofs("jogadores.txt", std::ofstream::out | std::ofstream::trunc);
+    ofs << "Carlos;Caco;10\n";      // Jogador com pontuação 10
+    ofs << "Ana;Aninha;50\n";       // Jogadora com maior pontuação (50) - deve aparecer no topo da lista
+    ofs << "Bia;Bibis;20\n";        // Jogadora com pontuação 20 - deveria aparecer em segundo lugar da lista
+    ofs.close();    
+
+    // Cria um gerenciador de jogadores para passar para a lista de jogadores.
+    auto playerManager = std::make_unique<PlayerManager>();
+
+    // Cria a instância da classe ListPlayers que será testada.
+    ListPlayers listTester(nullptr, playerManager.get());
+
+    SUBCASE ("Verifica estado inicial e saída com ESC") {
+        // Verifica se o deslocamento da rolagem (scroll) começa zerado, ou seja, a lista tá mostrando o primeiro jogador no topo.
+        CHECK(listTester.getScrollOffset() == 0); 
+
+        // Verifica se o estado inicial do menu está "None", indicando que não há nenhuma ação em andamento nem mudança de tela (que não tem nada acontecendo).
+        CHECK(listTester.getNextState() == MenuState::None);
+
+        // Simula o pressionamento da tecla ESC para sair da lista de jogadores.
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_ESCAPE));
+
+        // Verifica se, após pressionar ESC, o estado mudou para "GoToMainMenu", o que indica que o programa deve voltar para o menu principal.
+        CHECK(listTester.getNextState() == MenuState::GoToMainMenu);
+    }
+
+    SUBCASE("Testa a rolagem para baixo e para cima na lista") {
+        // Inicialmente, o scroll deve estar no topo (0)
+        CHECK(listTester.getScrollOffset() == 0);
+        
+        // Simula pressionar a seta para baixo, o scroll deve avançar para o próximo jogador
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_DOWN));
+        CHECK(listTester.getScrollOffset() == 1);
+
+        // Pressiona seta para baixo novamente, o scroll avança mais um jogador
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_DOWN));
+        CHECK(listTester.getScrollOffset() == 2); 
+
+        // Pressiona seta para baixo uma terceira vez, mas o scroll não deve ultrapassar o último item, então permanece no valor máximo 2.
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_DOWN));
+        CHECK(listTester.getScrollOffset() == 2); 
+
+        // Agora, simula pressionar seta para cima, o scroll deve voltar para o jogador anterior
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_UP));
+        CHECK(listTester.getScrollOffset() == 1);
+
+        // Pressiona seta para cima novamente, scroll volta para o topo da lista (0)
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_UP));
+        CHECK(listTester.getScrollOffset() == 0);
+
+        // Pressiona seta para cima mais uma vez, mas como ele já passou pelos 3 jogadores, continua em 0. 
+        listTester.ProcessEvent(auxEvent(ALLEGRO_KEY_UP));
+        CHECK(listTester.getScrollOffset() == 0); 
+    }
+
+}

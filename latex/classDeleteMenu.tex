@@ -1,0 +1,247 @@
+\doxysection{Delete\+Menu Class Reference}
+\hypertarget{classDeleteMenu}{}\label{classDeleteMenu}\index{DeleteMenu@{DeleteMenu}}
+
+
+{\ttfamily \#include $<$deletemenu.\+hpp$>$}
+
+
+
+Inheritance diagram for Delete\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classDeleteMenu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Delete\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classDeleteMenu__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDeleteMenu_a0fbd751537cb82b3934655b4e361967e}{Delete\+Menu}} (ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classDeleteMenu_ae02da6ef1bcccf85ec3711e921b6e20f}{font}}, \mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\item 
+\mbox{\hyperlink{classDeleteMenu_a6fb859fbf77d017130c2ed04287a3b22}{\texorpdfstring{$\sim$}{\string~}\+Delete\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classDeleteMenu_a5039104845dce8c6619617ec6b50c658}{Process\+Event}} (const ALLEGRO\+\_\+\+EVENT \&event) override
+\item 
+void \mbox{\hyperlink{classDeleteMenu_a2a658ab2b984a7d0a57ca89fbffa0c01}{Draw}} () override
+\item 
+void \mbox{\hyperlink{classDeleteMenu_aeb8ce669d5a10bb90d898e8e539ad614}{Reset}} () override
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classDeleteMenu_a506cc46bc323c5ece10a9af3e90c4b6f}{get\+Next\+State}} () override
+\item 
+bool \mbox{\hyperlink{classDeleteMenu_a05085c583f8f7ebb06396f66f898cbc5}{is\+Confirming}} () const
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ \& \mbox{\hyperlink{classDeleteMenu_a0d47921a920095db660415c7df871d56}{get\+Players}} () const
+\item 
+int \mbox{\hyperlink{classDeleteMenu_a0bcee0f149aac5c1320fbc4ff27d5bc1}{get\+Highlighted\+Index}} () const
+\item 
+const \mbox{\hyperlink{structButton}{Button}} \& \mbox{\hyperlink{classDeleteMenu_a1b824aa9b79a4ff4dde7089b599f437f}{get\+Confirm\+Button}} () const
+\item 
+const \mbox{\hyperlink{structButton}{Button}} \& \mbox{\hyperlink{classDeleteMenu_a2057cc723824357c8c85268cca37a136}{get\+Cancel\+Button}} () const
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeleteMenu_a754b82ac06f0a5c718e9a13b53da6c8b}{get\+Font}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMenu}{Menu}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classMenu_a8fc4104b08c9a24d1dab18b82a82b7da}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDeleteMenu_a4b55e1d654fe247d769a265ea4b109bf}{refresh\+Player\+List}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDeleteMenu_a13c2b292aecb3939a0e1e511c28da4eb}{is\+Confirming\+Delete}} = false
+\item 
+\mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeleteMenu_a59837b1a8eaa7a16d009b3a4aa2aeac7}{player\+Manager}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ \mbox{\hyperlink{classDeleteMenu_a25aa08cd343f532741eedca06ac71fd9}{player\+List}}
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classDeleteMenu_ac97dbf428fdc8496ca6ca3315160458d}{next\+State}}
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDeleteMenu_ae02da6ef1bcccf85ec3711e921b6e20f}{font}}
+\item 
+int \mbox{\hyperlink{classDeleteMenu_a114197da0b800be6e97e83489730281e}{highlighted\+Index}} = -\/1
+\item 
+std\+::string \mbox{\hyperlink{classDeleteMenu_a328b5b092ee442acef0cc36f6c15ca64}{nickname\+To\+Delete}}
+\item 
+\mbox{\hyperlink{structButton}{Button}} \mbox{\hyperlink{classDeleteMenu_a5c9658aef10954c53c998254af7976f3}{confirm\+Button}}
+\item 
+\mbox{\hyperlink{structButton}{Button}} \mbox{\hyperlink{classDeleteMenu_a51454b02778f79cdb45fdf57a685c43d}{cancel\+Button}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDeleteMenu_a0fbd751537cb82b3934655b4e361967e}\label{classDeleteMenu_a0fbd751537cb82b3934655b4e361967e} 
+\index{DeleteMenu@{DeleteMenu}!DeleteMenu@{DeleteMenu}}
+\index{DeleteMenu@{DeleteMenu}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{DeleteMenu()}{DeleteMenu()}}
+{\footnotesize\ttfamily Delete\+Menu\+::\+Delete\+Menu (\begin{DoxyParamCaption}\item[{ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}}]{font,  }\item[{\mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager }\end{DoxyParamCaption})}
+
+\Hypertarget{classDeleteMenu_a6fb859fbf77d017130c2ed04287a3b22}\label{classDeleteMenu_a6fb859fbf77d017130c2ed04287a3b22} 
+\index{DeleteMenu@{DeleteMenu}!````~DeleteMenu@{\texorpdfstring{$\sim$}{\string~}DeleteMenu}}
+\index{````~DeleteMenu@{\texorpdfstring{$\sim$}{\string~}DeleteMenu}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DeleteMenu()}{\string~DeleteMenu()}}
+{\footnotesize\ttfamily Delete\+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Delete\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDeleteMenu_a2a658ab2b984a7d0a57ca89fbffa0c01}\label{classDeleteMenu_a2a658ab2b984a7d0a57ca89fbffa0c01} 
+\index{DeleteMenu@{DeleteMenu}!Draw@{Draw}}
+\index{Draw@{Draw}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Delete\+Menu\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_aa75c508342e6c2509fe064b8986d3a6f}{Menu}}.
+
+\Hypertarget{classDeleteMenu_a2057cc723824357c8c85268cca37a136}\label{classDeleteMenu_a2057cc723824357c8c85268cca37a136} 
+\index{DeleteMenu@{DeleteMenu}!getCancelButton@{getCancelButton}}
+\index{getCancelButton@{getCancelButton}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getCancelButton()}{getCancelButton()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structButton}{Button}} \& Delete\+Menu\+::get\+Cancel\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a1b824aa9b79a4ff4dde7089b599f437f}\label{classDeleteMenu_a1b824aa9b79a4ff4dde7089b599f437f} 
+\index{DeleteMenu@{DeleteMenu}!getConfirmButton@{getConfirmButton}}
+\index{getConfirmButton@{getConfirmButton}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getConfirmButton()}{getConfirmButton()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structButton}{Button}} \& Delete\+Menu\+::get\+Confirm\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a754b82ac06f0a5c718e9a13b53da6c8b}\label{classDeleteMenu_a754b82ac06f0a5c718e9a13b53da6c8b} 
+\index{DeleteMenu@{DeleteMenu}!getFont@{getFont}}
+\index{getFont@{getFont}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} Delete\+Menu\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a0bcee0f149aac5c1320fbc4ff27d5bc1}\label{classDeleteMenu_a0bcee0f149aac5c1320fbc4ff27d5bc1} 
+\index{DeleteMenu@{DeleteMenu}!getHighlightedIndex@{getHighlightedIndex}}
+\index{getHighlightedIndex@{getHighlightedIndex}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getHighlightedIndex()}{getHighlightedIndex()}}
+{\footnotesize\ttfamily int Delete\+Menu\+::get\+Highlighted\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a506cc46bc323c5ece10a9af3e90c4b6f}\label{classDeleteMenu_a506cc46bc323c5ece10a9af3e90c4b6f} 
+\index{DeleteMenu@{DeleteMenu}!getNextState@{getNextState}}
+\index{getNextState@{getNextState}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getNextState()}{getNextState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Delete\+Menu\+::get\+Next\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_ad34f5745a27c492a42f4c2146910a16e}{Menu}}.
+
+\Hypertarget{classDeleteMenu_a0d47921a920095db660415c7df871d56}\label{classDeleteMenu_a0d47921a920095db660415c7df871d56} 
+\index{DeleteMenu@{DeleteMenu}!getPlayers@{getPlayers}}
+\index{getPlayers@{getPlayers}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{getPlayers()}{getPlayers()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ \& Delete\+Menu\+::get\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a05085c583f8f7ebb06396f66f898cbc5}\label{classDeleteMenu_a05085c583f8f7ebb06396f66f898cbc5} 
+\index{DeleteMenu@{DeleteMenu}!isConfirming@{isConfirming}}
+\index{isConfirming@{isConfirming}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{isConfirming()}{isConfirming()}}
+{\footnotesize\ttfamily bool Delete\+Menu\+::is\+Confirming (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDeleteMenu_a5039104845dce8c6619617ec6b50c658}\label{classDeleteMenu_a5039104845dce8c6619617ec6b50c658} 
+\index{DeleteMenu@{DeleteMenu}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily void Delete\+Menu\+::\+Process\+Event (\begin{DoxyParamCaption}\item[{const ALLEGRO\+\_\+\+EVENT \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_abf38fa7317f666dd5854e6c0d73f30f7}{Menu}}.
+
+\Hypertarget{classDeleteMenu_a4b55e1d654fe247d769a265ea4b109bf}\label{classDeleteMenu_a4b55e1d654fe247d769a265ea4b109bf} 
+\index{DeleteMenu@{DeleteMenu}!refreshPlayerList@{refreshPlayerList}}
+\index{refreshPlayerList@{refreshPlayerList}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{refreshPlayerList()}{refreshPlayerList()}}
+{\footnotesize\ttfamily void Delete\+Menu\+::refresh\+Player\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_aeb8ce669d5a10bb90d898e8e539ad614}\label{classDeleteMenu_aeb8ce669d5a10bb90d898e8e539ad614} 
+\index{DeleteMenu@{DeleteMenu}!Reset@{Reset}}
+\index{Reset@{Reset}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Delete\+Menu\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_a7f729857572363927907fc4a62bd2095}{Menu}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDeleteMenu_a51454b02778f79cdb45fdf57a685c43d}\label{classDeleteMenu_a51454b02778f79cdb45fdf57a685c43d} 
+\index{DeleteMenu@{DeleteMenu}!cancelButton@{cancelButton}}
+\index{cancelButton@{cancelButton}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{cancelButton}{cancelButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structButton}{Button}} Delete\+Menu\+::cancel\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a5c9658aef10954c53c998254af7976f3}\label{classDeleteMenu_a5c9658aef10954c53c998254af7976f3} 
+\index{DeleteMenu@{DeleteMenu}!confirmButton@{confirmButton}}
+\index{confirmButton@{confirmButton}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{confirmButton}{confirmButton}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structButton}{Button}} Delete\+Menu\+::confirm\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_ae02da6ef1bcccf85ec3711e921b6e20f}\label{classDeleteMenu_ae02da6ef1bcccf85ec3711e921b6e20f} 
+\index{DeleteMenu@{DeleteMenu}!font@{font}}
+\index{font@{font}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT\texorpdfstring{$\ast$}{*} Delete\+Menu\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a114197da0b800be6e97e83489730281e}\label{classDeleteMenu_a114197da0b800be6e97e83489730281e} 
+\index{DeleteMenu@{DeleteMenu}!highlightedIndex@{highlightedIndex}}
+\index{highlightedIndex@{highlightedIndex}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{highlightedIndex}{highlightedIndex}}
+{\footnotesize\ttfamily int Delete\+Menu\+::highlighted\+Index = -\/1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a13c2b292aecb3939a0e1e511c28da4eb}\label{classDeleteMenu_a13c2b292aecb3939a0e1e511c28da4eb} 
+\index{DeleteMenu@{DeleteMenu}!isConfirmingDelete@{isConfirmingDelete}}
+\index{isConfirmingDelete@{isConfirmingDelete}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{isConfirmingDelete}{isConfirmingDelete}}
+{\footnotesize\ttfamily bool Delete\+Menu\+::is\+Confirming\+Delete = false\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_ac97dbf428fdc8496ca6ca3315160458d}\label{classDeleteMenu_ac97dbf428fdc8496ca6ca3315160458d} 
+\index{DeleteMenu@{DeleteMenu}!nextState@{nextState}}
+\index{nextState@{nextState}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{nextState}{nextState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Delete\+Menu\+::next\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a328b5b092ee442acef0cc36f6c15ca64}\label{classDeleteMenu_a328b5b092ee442acef0cc36f6c15ca64} 
+\index{DeleteMenu@{DeleteMenu}!nicknameToDelete@{nicknameToDelete}}
+\index{nicknameToDelete@{nicknameToDelete}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{nicknameToDelete}{nicknameToDelete}}
+{\footnotesize\ttfamily std\+::string Delete\+Menu\+::nickname\+To\+Delete\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a25aa08cd343f532741eedca06ac71fd9}\label{classDeleteMenu_a25aa08cd343f532741eedca06ac71fd9} 
+\index{DeleteMenu@{DeleteMenu}!playerList@{playerList}}
+\index{playerList@{playerList}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{playerList}{playerList}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structPlayer}{Player}}$>$ Delete\+Menu\+::player\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDeleteMenu_a59837b1a8eaa7a16d009b3a4aa2aeac7}\label{classDeleteMenu_a59837b1a8eaa7a16d009b3a4aa2aeac7} 
+\index{DeleteMenu@{DeleteMenu}!playerManager@{playerManager}}
+\index{playerManager@{playerManager}!DeleteMenu@{DeleteMenu}}
+\doxysubsubsection{\texorpdfstring{playerManager}{playerManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayerManager}{Player\+Manager}}\texorpdfstring{$\ast$}{*} Delete\+Menu\+::player\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{deletemenu_8hpp}{deletemenu.\+hpp}}\item 
+src/\mbox{\hyperlink{deletemenu_8cpp}{deletemenu.\+cpp}}\end{DoxyCompactItemize}

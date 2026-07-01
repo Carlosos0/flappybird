@@ -1,0 +1,212 @@
+\doxysection{Cadastro Class Reference}
+\hypertarget{classCadastro}{}\label{classCadastro}\index{Cadastro@{Cadastro}}
+
+
+{\ttfamily \#include $<$register.\+hpp$>$}
+
+
+
+Inheritance diagram for Cadastro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{classCadastro__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cadastro\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{classCadastro__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCadastro_a88b77e12eed6d50112a4e0698e78e9e4}{Cadastro}} (ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9}{display}}, ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCadastro_a864993a0d19dd745f2472d8133c06f23}{font}}, \mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*}manager)
+\item 
+void \mbox{\hyperlink{classCadastro_a1d26354a8a62e26193d5310aea6ac654}{Process\+Event}} (const ALLEGRO\+\_\+\+EVENT \&event) override
+\item 
+void \mbox{\hyperlink{classCadastro_a8c9c44bc7bd59599fb8fb8652e53697e}{Draw}} () override
+\item 
+void \mbox{\hyperlink{classCadastro_a51a178a70b0fa586d7839e58445e0c4b}{Reset}} () override
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classCadastro_a1b852a21fa2583a200a0e6bd315dd3af}{get\+Next\+State}} () override
+\item 
+const std\+::string \& \mbox{\hyperlink{classCadastro_aa3ba09f01fc5bc0340b38e07a8daeb65}{get\+Nome\+Atual}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classCadastro_af760566ac776d9859acd3621715ed985}{get\+Apelido\+Atual}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classCadastro_a4b622fdb9a87b2a323d42d024aa02f85}{get\+Mensagem}} () const
+\item 
+bool \mbox{\hyperlink{classCadastro_ad811d6a0c3e93c281364307708d5a12a}{is\+Digitando\+Nome}} () const
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCadastro_ac595c8120c5248b0fd401742df01c412}{get\+Font}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMenu}{Menu}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classMenu_a8fc4104b08c9a24d1dab18b82a82b7da}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classCadastro_a5adee8886813db19dcb535d7d649a3a4}{digitando\+\_\+nome}}
+\item 
+std\+::string \mbox{\hyperlink{classCadastro_ab505f6d9b3a94ef9422d3f76ba54fa26}{nome\+\_\+atual}}
+\item 
+std\+::string \mbox{\hyperlink{classCadastro_a8588e8cab6cd5cb0d9930ead31d3064b}{apelido\+\_\+atual}}
+\item 
+std\+::string \mbox{\hyperlink{classCadastro_ad396bbefe46cc00c4572908fbd667897}{mensagem}}
+\item 
+ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9}{display}}
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCadastro_a864993a0d19dd745f2472d8133c06f23}{font}}
+\item 
+\mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCadastro_ab9c4a326273b823c1d4dea413cfeffc2}{player\+Manager}}
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classCadastro_a5c8b8d8d58e8aabfa111ad6d2b9f5553}{next\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCadastro_a88b77e12eed6d50112a4e0698e78e9e4}\label{classCadastro_a88b77e12eed6d50112a4e0698e78e9e4} 
+\index{Cadastro@{Cadastro}!Cadastro@{Cadastro}}
+\index{Cadastro@{Cadastro}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{Cadastro()}{Cadastro()}}
+{\footnotesize\ttfamily Cadastro\+::\+Cadastro (\begin{DoxyParamCaption}\item[{ALLEGRO\+\_\+\+DISPLAY \texorpdfstring{$\ast$}{*}}]{display,  }\item[{ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*}}]{font,  }\item[{\mbox{\hyperlink{classPlayerManager}{Player\+Manager}} \texorpdfstring{$\ast$}{*}}]{manager }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCadastro_a8c9c44bc7bd59599fb8fb8652e53697e}\label{classCadastro_a8c9c44bc7bd59599fb8fb8652e53697e} 
+\index{Cadastro@{Cadastro}!Draw@{Draw}}
+\index{Draw@{Draw}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Cadastro\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_aa75c508342e6c2509fe064b8986d3a6f}{Menu}}.
+
+\Hypertarget{classCadastro_af760566ac776d9859acd3621715ed985}\label{classCadastro_af760566ac776d9859acd3621715ed985} 
+\index{Cadastro@{Cadastro}!getApelidoAtual@{getApelidoAtual}}
+\index{getApelidoAtual@{getApelidoAtual}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{getApelidoAtual()}{getApelidoAtual()}}
+{\footnotesize\ttfamily const std\+::string \& Cadastro\+::get\+Apelido\+Atual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCadastro_ac595c8120c5248b0fd401742df01c412}\label{classCadastro_ac595c8120c5248b0fd401742df01c412} 
+\index{Cadastro@{Cadastro}!getFont@{getFont}}
+\index{getFont@{getFont}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} Cadastro\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCadastro_a4b622fdb9a87b2a323d42d024aa02f85}\label{classCadastro_a4b622fdb9a87b2a323d42d024aa02f85} 
+\index{Cadastro@{Cadastro}!getMensagem@{getMensagem}}
+\index{getMensagem@{getMensagem}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{getMensagem()}{getMensagem()}}
+{\footnotesize\ttfamily const std\+::string \& Cadastro\+::get\+Mensagem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCadastro_a1b852a21fa2583a200a0e6bd315dd3af}\label{classCadastro_a1b852a21fa2583a200a0e6bd315dd3af} 
+\index{Cadastro@{Cadastro}!getNextState@{getNextState}}
+\index{getNextState@{getNextState}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{getNextState()}{getNextState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Cadastro\+::get\+Next\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_ad34f5745a27c492a42f4c2146910a16e}{Menu}}.
+
+\Hypertarget{classCadastro_aa3ba09f01fc5bc0340b38e07a8daeb65}\label{classCadastro_aa3ba09f01fc5bc0340b38e07a8daeb65} 
+\index{Cadastro@{Cadastro}!getNomeAtual@{getNomeAtual}}
+\index{getNomeAtual@{getNomeAtual}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{getNomeAtual()}{getNomeAtual()}}
+{\footnotesize\ttfamily const std\+::string \& Cadastro\+::get\+Nome\+Atual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCadastro_ad811d6a0c3e93c281364307708d5a12a}\label{classCadastro_ad811d6a0c3e93c281364307708d5a12a} 
+\index{Cadastro@{Cadastro}!isDigitandoNome@{isDigitandoNome}}
+\index{isDigitandoNome@{isDigitandoNome}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{isDigitandoNome()}{isDigitandoNome()}}
+{\footnotesize\ttfamily bool Cadastro\+::is\+Digitando\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classCadastro_a1d26354a8a62e26193d5310aea6ac654}\label{classCadastro_a1d26354a8a62e26193d5310aea6ac654} 
+\index{Cadastro@{Cadastro}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily void Cadastro\+::\+Process\+Event (\begin{DoxyParamCaption}\item[{const ALLEGRO\+\_\+\+EVENT \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_abf38fa7317f666dd5854e6c0d73f30f7}{Menu}}.
+
+\Hypertarget{classCadastro_a51a178a70b0fa586d7839e58445e0c4b}\label{classCadastro_a51a178a70b0fa586d7839e58445e0c4b} 
+\index{Cadastro@{Cadastro}!Reset@{Reset}}
+\index{Reset@{Reset}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Cadastro\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_a7f729857572363927907fc4a62bd2095}{Menu}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCadastro_a8588e8cab6cd5cb0d9930ead31d3064b}\label{classCadastro_a8588e8cab6cd5cb0d9930ead31d3064b} 
+\index{Cadastro@{Cadastro}!apelido\_atual@{apelido\_atual}}
+\index{apelido\_atual@{apelido\_atual}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{apelido\_atual}{apelido\_atual}}
+{\footnotesize\ttfamily std\+::string Cadastro\+::apelido\+\_\+atual\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_a5adee8886813db19dcb535d7d649a3a4}\label{classCadastro_a5adee8886813db19dcb535d7d649a3a4} 
+\index{Cadastro@{Cadastro}!digitando\_nome@{digitando\_nome}}
+\index{digitando\_nome@{digitando\_nome}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{digitando\_nome}{digitando\_nome}}
+{\footnotesize\ttfamily bool Cadastro\+::digitando\+\_\+nome\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9}\label{classCadastro_a619cb565699b6d3ec8b2d9118dc221b9} 
+\index{Cadastro@{Cadastro}!display@{display}}
+\index{display@{display}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+DISPLAY\texorpdfstring{$\ast$}{*} Cadastro\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_a864993a0d19dd745f2472d8133c06f23}\label{classCadastro_a864993a0d19dd745f2472d8133c06f23} 
+\index{Cadastro@{Cadastro}!font@{font}}
+\index{font@{font}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT\texorpdfstring{$\ast$}{*} Cadastro\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_ad396bbefe46cc00c4572908fbd667897}\label{classCadastro_ad396bbefe46cc00c4572908fbd667897} 
+\index{Cadastro@{Cadastro}!mensagem@{mensagem}}
+\index{mensagem@{mensagem}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{mensagem}{mensagem}}
+{\footnotesize\ttfamily std\+::string Cadastro\+::mensagem\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_a5c8b8d8d58e8aabfa111ad6d2b9f5553}\label{classCadastro_a5c8b8d8d58e8aabfa111ad6d2b9f5553} 
+\index{Cadastro@{Cadastro}!nextState@{nextState}}
+\index{nextState@{nextState}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{nextState}{nextState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Cadastro\+::next\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_ab505f6d9b3a94ef9422d3f76ba54fa26}\label{classCadastro_ab505f6d9b3a94ef9422d3f76ba54fa26} 
+\index{Cadastro@{Cadastro}!nome\_atual@{nome\_atual}}
+\index{nome\_atual@{nome\_atual}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{nome\_atual}{nome\_atual}}
+{\footnotesize\ttfamily std\+::string Cadastro\+::nome\+\_\+atual\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classCadastro_ab9c4a326273b823c1d4dea413cfeffc2}\label{classCadastro_ab9c4a326273b823c1d4dea413cfeffc2} 
+\index{Cadastro@{Cadastro}!playerManager@{playerManager}}
+\index{playerManager@{playerManager}!Cadastro@{Cadastro}}
+\doxysubsubsection{\texorpdfstring{playerManager}{playerManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPlayerManager}{Player\+Manager}}\texorpdfstring{$\ast$}{*} Cadastro\+::player\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{register_8hpp}{register.\+hpp}}\item 
+src/\mbox{\hyperlink{register_8cpp}{register.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\doxysection{doublepipes.\+hpp}
+\hypertarget{doublepipes_8hpp_source}{}\label{doublepipes_8hpp_source}\index{include/doublepipes.hpp@{include/doublepipes.hpp}}
+\mbox{\hyperlink{doublepipes_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOUBLEPIPES\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOUBLEPIPES\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pipe_8hpp}{pipe.hpp}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdoublepipes}{doublepipes}}\ \{}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classPipe}{Pipe}}\ \mbox{\hyperlink{classdoublepipes_a4107b0ed38f5933b4ce883b91eacc595}{bottom}};}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classPipe}{Pipe}}\ \mbox{\hyperlink{classdoublepipes_a9cefaf36c8821102456f4ef43707ff81}{top}};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdoublepipes_ae7d956d1aaef651734e9a41c1623d4a9}{gap}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structvetor}{vetor}}\ \mbox{\hyperlink{classdoublepipes_a6fe9d1597e9ae73ebcdcebd0c2da017d}{InvertPipePos}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPipe}{Pipe}}\&\ initPipe,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdoublepipes_ae7d956d1aaef651734e9a41c1623d4a9}{gap}});\ \textcolor{comment}{//\ cria\ um\ cano\ baseado\ no\ outro}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{classdoublepipes}{doublepipes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPipe}{Pipe}}\&\ initPipe,\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdoublepipes_ae7d956d1aaef651734e9a41c1623d4a9}{gap}});}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classdoublepipes_a36b282868cd6a0645fa61645db59c545}{\string~doublepipes}}();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPipe}{Pipe}}\&\ \mbox{\hyperlink{classdoublepipes_abe9361e644f67f6cd42f53d063830283}{getTop}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPipe}{Pipe}}\&\ \mbox{\hyperlink{classdoublepipes_abd8fa60bcdc5733d4a4a42dbcec3483a}{getBottom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classdoublepipes_a67c581dfb011bfc6d49be919f257e640}{getGap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoublepipes_a8091cc839d2dc4738550dd52c391e3a8}{DoubleMovement}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdoublepipes_a0d1d385159e6c619f226e0b6465f7602}{OffScreen}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

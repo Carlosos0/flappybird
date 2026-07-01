@@ -1,0 +1,3 @@
+Armazenar os executáveis gerados pela compilação.
+
+P.S: EXCLUIR ANTES DE ENVIAR O PROJETO!

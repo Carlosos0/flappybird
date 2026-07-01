@@ -1,0 +1,106 @@
+\doxysection{include/gamecontroller.hpp File Reference}
+\hypertarget{gamecontroller_8hpp}{}\label{gamecontroller_8hpp}\index{include/gamecontroller.hpp@{include/gamecontroller.hpp}}
+{\ttfamily \#include $<$allegro5/allegro.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+font.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$allegro5/allegro\+\_\+primitives.\+h$>$}\newline
+{\ttfamily \#include "{}ambience.\+hpp"{}}\newline
+{\ttfamily \#include "{}bird.\+hpp"{}}\newline
+{\ttfamily \#include "{}crash.\+hpp"{}}\newline
+{\ttfamily \#include "{}deletemenu.\+hpp"{}}\newline
+{\ttfamily \#include "{}floor.\+hpp"{}}\newline
+{\ttfamily \#include "{}gameovermenu.\+hpp"{}}\newline
+{\ttfamily \#include "{}graphloader.\+hpp"{}}\newline
+{\ttfamily \#include "{}input.\+hpp"{}}\newline
+{\ttfamily \#include "{}nicknameinput.\+hpp"{}}\newline
+{\ttfamily \#include "{}pipe\+Control.\+hpp"{}}\newline
+{\ttfamily \#include "{}playermanager.\+hpp"{}}\newline
+{\ttfamily \#include "{}principalmenu.\+hpp"{}}\newline
+{\ttfamily \#include "{}register.\+hpp"{}}\newline
+{\ttfamily \#include "{}score.\+hpp"{}}\newline
+Include dependency graph for gamecontroller.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gamecontroller_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{gamecontroller_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classgamecontroller}{gamecontroller}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \newline
+\mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a5e3732f3a271b76aec1e6ab277cfc830}{mainmenu}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285aaf1c6767a286163a6bf8ac8b05a98d07}{Nickname\+Input}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8100f7774ec83dc0d1f62057ba5a73c1}{Player\+Register}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac33e404a441c6ba9648f88af3c68a1ca}{Statistics}}
+, \newline
+\mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a7eda2dbe357294532f593ce2f3b10344}{Delete\+Player}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac9dbb2b7c84159b632d71e512eba8428}{Playing}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ae99180abf47a8b3a856e0bcb2656990a}{Paused}}
+, \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3}{Game\+Over}}
+, \newline
+\mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a2e270660f0b67aeeedd788ccff7f29d2}{Count\+Down}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285} 
+\index{gamecontroller.hpp@{gamecontroller.hpp}!GameState@{GameState}}
+\index{GameState@{GameState}!gamecontroller.hpp@{gamecontroller.hpp}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mainmenu@{mainmenu}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!mainmenu@{mainmenu}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a5e3732f3a271b76aec1e6ab277cfc830}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a5e3732f3a271b76aec1e6ab277cfc830} 
+mainmenu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NicknameInput@{NicknameInput}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!NicknameInput@{NicknameInput}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285aaf1c6767a286163a6bf8ac8b05a98d07}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285aaf1c6767a286163a6bf8ac8b05a98d07} 
+Nickname\+Input&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PlayerRegister@{PlayerRegister}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!PlayerRegister@{PlayerRegister}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8100f7774ec83dc0d1f62057ba5a73c1}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8100f7774ec83dc0d1f62057ba5a73c1} 
+Player\+Register&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Statistics@{Statistics}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!Statistics@{Statistics}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac33e404a441c6ba9648f88af3c68a1ca}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac33e404a441c6ba9648f88af3c68a1ca} 
+Statistics&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DeletePlayer@{DeletePlayer}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!DeletePlayer@{DeletePlayer}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a7eda2dbe357294532f593ce2f3b10344}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a7eda2dbe357294532f593ce2f3b10344} 
+Delete\+Player&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Playing@{Playing}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!Playing@{Playing}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac9dbb2b7c84159b632d71e512eba8428}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ac9dbb2b7c84159b632d71e512eba8428} 
+Playing&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paused@{Paused}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!Paused@{Paused}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ae99180abf47a8b3a856e0bcb2656990a}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285ae99180abf47a8b3a856e0bcb2656990a} 
+Paused&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GameOver@{GameOver}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!GameOver@{GameOver}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a8f347bc7cebca9fa6d97e70c6bc29eb3} 
+Game\+Over&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CountDown@{CountDown}!gamecontroller.hpp@{gamecontroller.hpp}}\index{gamecontroller.hpp@{gamecontroller.hpp}!CountDown@{CountDown}}}\Hypertarget{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a2e270660f0b67aeeedd788ccff7f29d2}\label{gamecontroller_8hpp_a7899b65f1ea0f655e4bbf8d2a5714285a2e270660f0b67aeeedd788ccff7f29d2} 
+Count\+Down&\\
+\hline
+
+\end{DoxyEnumFields}

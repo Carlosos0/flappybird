@@ -1,0 +1,118 @@
+\doxysection{Player\+Manager Class Reference}
+\hypertarget{classPlayerManager}{}\label{classPlayerManager}\index{PlayerManager@{PlayerManager}}
+
+
+{\ttfamily \#include $<$playermanager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlayerManager_ae093e4e4e7eecdf5b46de72f5827d71d}{Player\+Manager}} ()
+\item 
+\mbox{\hyperlink{classPlayerManager_ab53de6b16914b7591fc2bd3038069ac7}{\texorpdfstring{$\sim$}{\string~}\+Player\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{classPlayerManager_abf9d533f7069aa220268effe7c2e6905}{delete\+Player}} (const std\+::string \&nickname)
+\item 
+bool \mbox{\hyperlink{classPlayerManager_a64a34011995b346faac2fcca8397cbb6}{nickname\+Exists}} (const std\+::string \&nickname) const
+\item 
+bool \mbox{\hyperlink{classPlayerManager_a24ca28079e3f7477c8ecd7b2e32abefe}{add\+New\+Player}} (const std\+::string \&name, const std\+::string \&nickname)
+\item 
+void \mbox{\hyperlink{classPlayerManager_aba81aed8229d658dafb797dcee2421bb}{update\+Player\+Score}} (const std\+::string \&nickname, int new\+Score)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ \mbox{\hyperlink{classPlayerManager_ab84fe6b7836f42ad57d18e18c7223cd6}{get\+Ranked\+Players}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPlayerManager_ae8b2d426c37a56a5d20371891807b4c6}{load\+Players\+From\+File}} ()
+\item 
+void \mbox{\hyperlink{classPlayerManager_aadb91f8f6866ea4a0b4906967581ae46}{save\+Players\+To\+File}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ \mbox{\hyperlink{classPlayerManager_ada88b7db6806ac537075af2c0bb0a63c}{players}}
+\item 
+const std\+::string \mbox{\hyperlink{classPlayerManager_abd39d43b141ce9988fc7f6f0a39437d3}{filename}} = "{}jogadores.\+txt"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlayerManager_ae093e4e4e7eecdf5b46de72f5827d71d}\label{classPlayerManager_ae093e4e4e7eecdf5b46de72f5827d71d} 
+\index{PlayerManager@{PlayerManager}!PlayerManager@{PlayerManager}}
+\index{PlayerManager@{PlayerManager}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{PlayerManager()}{PlayerManager()}}
+{\footnotesize\ttfamily Player\+Manager\+::\+Player\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classPlayerManager_ab53de6b16914b7591fc2bd3038069ac7}\label{classPlayerManager_ab53de6b16914b7591fc2bd3038069ac7} 
+\index{PlayerManager@{PlayerManager}!````~PlayerManager@{\texorpdfstring{$\sim$}{\string~}PlayerManager}}
+\index{````~PlayerManager@{\texorpdfstring{$\sim$}{\string~}PlayerManager}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}PlayerManager()}{\string~PlayerManager()}}
+{\footnotesize\ttfamily Player\+Manager\+::\texorpdfstring{$\sim$}{\string~}\+Player\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlayerManager_a24ca28079e3f7477c8ecd7b2e32abefe}\label{classPlayerManager_a24ca28079e3f7477c8ecd7b2e32abefe} 
+\index{PlayerManager@{PlayerManager}!addNewPlayer@{addNewPlayer}}
+\index{addNewPlayer@{addNewPlayer}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{addNewPlayer()}{addNewPlayer()}}
+{\footnotesize\ttfamily bool Player\+Manager\+::add\+New\+Player (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{nickname }\end{DoxyParamCaption})}
+
+\Hypertarget{classPlayerManager_abf9d533f7069aa220268effe7c2e6905}\label{classPlayerManager_abf9d533f7069aa220268effe7c2e6905} 
+\index{PlayerManager@{PlayerManager}!deletePlayer@{deletePlayer}}
+\index{deletePlayer@{deletePlayer}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{deletePlayer()}{deletePlayer()}}
+{\footnotesize\ttfamily bool Player\+Manager\+::delete\+Player (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nickname }\end{DoxyParamCaption})}
+
+\Hypertarget{classPlayerManager_ab84fe6b7836f42ad57d18e18c7223cd6}\label{classPlayerManager_ab84fe6b7836f42ad57d18e18c7223cd6} 
+\index{PlayerManager@{PlayerManager}!getRankedPlayers@{getRankedPlayers}}
+\index{getRankedPlayers@{getRankedPlayers}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{getRankedPlayers()}{getRankedPlayers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structPlayer}{Player}} $>$ Player\+Manager\+::get\+Ranked\+Players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classPlayerManager_ae8b2d426c37a56a5d20371891807b4c6}\label{classPlayerManager_ae8b2d426c37a56a5d20371891807b4c6} 
+\index{PlayerManager@{PlayerManager}!loadPlayersFromFile@{loadPlayersFromFile}}
+\index{loadPlayersFromFile@{loadPlayersFromFile}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{loadPlayersFromFile()}{loadPlayersFromFile()}}
+{\footnotesize\ttfamily void Player\+Manager\+::load\+Players\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPlayerManager_a64a34011995b346faac2fcca8397cbb6}\label{classPlayerManager_a64a34011995b346faac2fcca8397cbb6} 
+\index{PlayerManager@{PlayerManager}!nicknameExists@{nicknameExists}}
+\index{nicknameExists@{nicknameExists}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{nicknameExists()}{nicknameExists()}}
+{\footnotesize\ttfamily bool Player\+Manager\+::nickname\+Exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nickname }\end{DoxyParamCaption}) const}
+
+\Hypertarget{classPlayerManager_aadb91f8f6866ea4a0b4906967581ae46}\label{classPlayerManager_aadb91f8f6866ea4a0b4906967581ae46} 
+\index{PlayerManager@{PlayerManager}!savePlayersToFile@{savePlayersToFile}}
+\index{savePlayersToFile@{savePlayersToFile}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{savePlayersToFile()}{savePlayersToFile()}}
+{\footnotesize\ttfamily void Player\+Manager\+::save\+Players\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPlayerManager_aba81aed8229d658dafb797dcee2421bb}\label{classPlayerManager_aba81aed8229d658dafb797dcee2421bb} 
+\index{PlayerManager@{PlayerManager}!updatePlayerScore@{updatePlayerScore}}
+\index{updatePlayerScore@{updatePlayerScore}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{updatePlayerScore()}{updatePlayerScore()}}
+{\footnotesize\ttfamily void Player\+Manager\+::update\+Player\+Score (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{nickname,  }\item[{int}]{new\+Score }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlayerManager_abd39d43b141ce9988fc7f6f0a39437d3}\label{classPlayerManager_abd39d43b141ce9988fc7f6f0a39437d3} 
+\index{PlayerManager@{PlayerManager}!filename@{filename}}
+\index{filename@{filename}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily const std\+::string Player\+Manager\+::filename = "{}jogadores.\+txt"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classPlayerManager_ada88b7db6806ac537075af2c0bb0a63c}\label{classPlayerManager_ada88b7db6806ac537075af2c0bb0a63c} 
+\index{PlayerManager@{PlayerManager}!players@{players}}
+\index{players@{players}!PlayerManager@{PlayerManager}}
+\doxysubsubsection{\texorpdfstring{players}{players}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structPlayer}{Player}}$>$ Player\+Manager\+::players\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{playermanager_8hpp}{playermanager.\+hpp}}\item 
+src/\mbox{\hyperlink{playermanager_8cpp}{playermanager.\+cpp}}\end{DoxyCompactItemize}

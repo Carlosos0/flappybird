@@ -1,0 +1,167 @@
+\doxysection{Game\+Over\+Menu Class Reference}
+\hypertarget{classGameOverMenu}{}\label{classGameOverMenu}\index{GameOverMenu@{GameOverMenu}}
+
+
+{\ttfamily \#include $<$gameovermenu.\+hpp$>$}
+
+
+
+Inheritance diagram for Game\+Over\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classGameOverMenu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Game\+Over\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classGameOverMenu__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameOverMenu_a4dca1c9928485b1c726112992115bbf8}{Game\+Over\+Menu}} ()
+\item 
+\mbox{\hyperlink{classGameOverMenu_a4d1cc3861255f9d4f3f6da073259f0f1}{\texorpdfstring{$\sim$}{\string~}\+Game\+Over\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classGameOverMenu_aa3fd09fd68b16ef7bf1be714e1ccb8ef}{Process\+Event}} (const ALLEGRO\+\_\+\+EVENT \&event) override
+\item 
+void \mbox{\hyperlink{classGameOverMenu_a57ade4cf495f83233fdb3be736a5e0b2}{Draw}} () override
+\item 
+void \mbox{\hyperlink{classGameOverMenu_abf1560e3bdb5b6422d2c692adb85c38a}{Reset}} () override
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classGameOverMenu_a42b10f4b565bbc6d8afd2e70895d0995}{get\+Next\+State}} () override
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{structButton}{Button}} $>$ \& \mbox{\hyperlink{classGameOverMenu_a7b51e45e5556f6f35c2b2ec037c1956d}{get\+Buttons}} () const
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGameOverMenu_a7e599f6ba82a7a9367f9ec3138424647}{get\+Font}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMenu}{Menu}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classMenu_a8fc4104b08c9a24d1dab18b82a82b7da}{\texorpdfstring{$\sim$}{\string~}\+Menu}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGameOverMenu_a8503707ccb2dafd9ab07b6e108e3c1fa}{Check\+Collision}} (float mouse\+\_\+x, float mouse\+\_\+y, const \mbox{\hyperlink{structButton}{Button}} \&button)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structButton}{Button}} $>$ \mbox{\hyperlink{classGameOverMenu_a414f55bd27397b7f3158cbee39419884}{buttons}}
+\item 
+\mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \mbox{\hyperlink{classGameOverMenu_a87125b9952b3d66640f3cb29b60a9097}{next\+State}}
+\item 
+ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGameOverMenu_a56e25f8414c4488d35ab04b10d3280cb}{font}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGameOverMenu_a4dca1c9928485b1c726112992115bbf8}\label{classGameOverMenu_a4dca1c9928485b1c726112992115bbf8} 
+\index{GameOverMenu@{GameOverMenu}!GameOverMenu@{GameOverMenu}}
+\index{GameOverMenu@{GameOverMenu}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{GameOverMenu()}{GameOverMenu()}}
+{\footnotesize\ttfamily Game\+Over\+Menu\+::\+Game\+Over\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classGameOverMenu_a4d1cc3861255f9d4f3f6da073259f0f1}\label{classGameOverMenu_a4d1cc3861255f9d4f3f6da073259f0f1} 
+\index{GameOverMenu@{GameOverMenu}!````~GameOverMenu@{\texorpdfstring{$\sim$}{\string~}GameOverMenu}}
+\index{````~GameOverMenu@{\texorpdfstring{$\sim$}{\string~}GameOverMenu}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameOverMenu()}{\string~GameOverMenu()}}
+{\footnotesize\ttfamily Game\+Over\+Menu\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Over\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGameOverMenu_a8503707ccb2dafd9ab07b6e108e3c1fa}\label{classGameOverMenu_a8503707ccb2dafd9ab07b6e108e3c1fa} 
+\index{GameOverMenu@{GameOverMenu}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily bool Game\+Over\+Menu\+::\+Check\+Collision (\begin{DoxyParamCaption}\item[{float}]{mouse\+\_\+x,  }\item[{float}]{mouse\+\_\+y,  }\item[{const \mbox{\hyperlink{structButton}{Button}} \&}]{button }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGameOverMenu_a57ade4cf495f83233fdb3be736a5e0b2}\label{classGameOverMenu_a57ade4cf495f83233fdb3be736a5e0b2} 
+\index{GameOverMenu@{GameOverMenu}!Draw@{Draw}}
+\index{Draw@{Draw}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Game\+Over\+Menu\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_aa75c508342e6c2509fe064b8986d3a6f}{Menu}}.
+
+\Hypertarget{classGameOverMenu_a7b51e45e5556f6f35c2b2ec037c1956d}\label{classGameOverMenu_a7b51e45e5556f6f35c2b2ec037c1956d} 
+\index{GameOverMenu@{GameOverMenu}!getButtons@{getButtons}}
+\index{getButtons@{getButtons}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{getButtons()}{getButtons()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{structButton}{Button}} $>$ \& Game\+Over\+Menu\+::get\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGameOverMenu_a7e599f6ba82a7a9367f9ec3138424647}\label{classGameOverMenu_a7e599f6ba82a7a9367f9ec3138424647} 
+\index{GameOverMenu@{GameOverMenu}!getFont@{getFont}}
+\index{getFont@{getFont}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{getFont()}{getFont()}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT \texorpdfstring{$\ast$}{*} Game\+Over\+Menu\+::get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classGameOverMenu_a42b10f4b565bbc6d8afd2e70895d0995}\label{classGameOverMenu_a42b10f4b565bbc6d8afd2e70895d0995} 
+\index{GameOverMenu@{GameOverMenu}!getNextState@{getNextState}}
+\index{getNextState@{getNextState}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{getNextState()}{getNextState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Game\+Over\+Menu\+::get\+Next\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_ad34f5745a27c492a42f4c2146910a16e}{Menu}}.
+
+\Hypertarget{classGameOverMenu_aa3fd09fd68b16ef7bf1be714e1ccb8ef}\label{classGameOverMenu_aa3fd09fd68b16ef7bf1be714e1ccb8ef} 
+\index{GameOverMenu@{GameOverMenu}!ProcessEvent@{ProcessEvent}}
+\index{ProcessEvent@{ProcessEvent}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{ProcessEvent()}{ProcessEvent()}}
+{\footnotesize\ttfamily void Game\+Over\+Menu\+::\+Process\+Event (\begin{DoxyParamCaption}\item[{const ALLEGRO\+\_\+\+EVENT \&}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_abf38fa7317f666dd5854e6c0d73f30f7}{Menu}}.
+
+\Hypertarget{classGameOverMenu_abf1560e3bdb5b6422d2c692adb85c38a}\label{classGameOverMenu_abf1560e3bdb5b6422d2c692adb85c38a} 
+\index{GameOverMenu@{GameOverMenu}!Reset@{Reset}}
+\index{Reset@{Reset}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Game\+Over\+Menu\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMenu_a7f729857572363927907fc4a62bd2095}{Menu}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classGameOverMenu_a414f55bd27397b7f3158cbee39419884}\label{classGameOverMenu_a414f55bd27397b7f3158cbee39419884} 
+\index{GameOverMenu@{GameOverMenu}!buttons@{buttons}}
+\index{buttons@{buttons}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{buttons}{buttons}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structButton}{Button}}$>$ Game\+Over\+Menu\+::buttons\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGameOverMenu_a56e25f8414c4488d35ab04b10d3280cb}\label{classGameOverMenu_a56e25f8414c4488d35ab04b10d3280cb} 
+\index{GameOverMenu@{GameOverMenu}!font@{font}}
+\index{font@{font}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily ALLEGRO\+\_\+\+FONT\texorpdfstring{$\ast$}{*} Game\+Over\+Menu\+::font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classGameOverMenu_a87125b9952b3d66640f3cb29b60a9097}\label{classGameOverMenu_a87125b9952b3d66640f3cb29b60a9097} 
+\index{GameOverMenu@{GameOverMenu}!nextState@{nextState}}
+\index{nextState@{nextState}!GameOverMenu@{GameOverMenu}}
+\doxysubsubsection{\texorpdfstring{nextState}{nextState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} Game\+Over\+Menu\+::next\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gameovermenu_8hpp}{gameovermenu.\+hpp}}\item 
+src/\mbox{\hyperlink{gameovermenu_8cpp}{gameovermenu.\+cpp}}\end{DoxyCompactItemize}

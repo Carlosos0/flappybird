@@ -1,0 +1,7 @@
+<map id="ListPlayers" name="ListPlayers">
+<area shape="rect" id="Node000001" title=" " alt="" coords="44,93,137,119"/>
+<area shape="rect" id="Node000002" href="$classMenu.html" title=" " alt="" coords="5,5,64,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="52,41,85,91,81,94,47,44"/>
+<area shape="rect" id="Node000003" href="$classPlayerManager.html" title=" " alt="" coords="88,5,208,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,44,101,94,96,91,130,41"/>
+</map>

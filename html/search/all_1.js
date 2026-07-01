@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['background_0',['background',['../classambience.html#a68680b05cb89c652a2301c38fccd6a7f',1,'ambience::background'],['../classPrincipalMenu.html#a2a73fe54d727a9f3add85ab9a5501d1e',1,'PrincipalMenu::background']]],
+  ['backgroundx_1',['backgroundx',['../classfloor.html#a5657495c2163a19cd4f34f894358560f',1,'floor::backgroundX'],['../classPrincipalMenu.html#a2930ffffadc2f624a894229bb5eab672',1,'PrincipalMenu::backgroundX']]],
+  ['basic_5fistream_2',['basic_istream',['../classstd_1_1basic__istream.html',1,'std']]],
+  ['basic_5fostream_3',['basic_ostream',['../classstd_1_1basic__ostream.html',1,'std']]],
+  ['binary_5fassert_4',['binary_assert',['../namespacedoctest_1_1detail.html#a1e295c708d2de0e47ac89c1632211159',1,'doctest::detail::binary_assert()'],['../structdoctest_1_1detail_1_1ResultBuilder.html#aa920a0617a26939d7adcd1ba2dec0e85',1,'doctest::detail::ResultBuilder::binary_assert()']]],
+  ['binary_5fname_5',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
+  ['bird_6',['bird',['../classbird.html',1,'bird'],['../classbird.html#a207c53dd60f897b12d1fffa4722e94d9',1,'bird::bird()']]],
+  ['bird_2ecpp_7',['bird.cpp',['../bird_8cpp.html',1,'']]],
+  ['bird_2ehpp_8',['bird.hpp',['../bird_8hpp.html',1,'']]],
+  ['birdimg_9',['birdImg',['../classgamecontroller.html#abcca09caa5059b8f1fa6984b78c692f0',1,'gamecontroller']]],
+  ['bkgimg_10',['bkgImg',['../classgamecontroller.html#a2f7bbbbe6dac0d83512b0edd938a7220',1,'gamecontroller']]],
+  ['blue_11',['Blue',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92aada3ad8958b1319450cc20f3f8e5e2d6',1,'doctest::Color']]],
+  ['bottom_12',['bottom',['../classdoublepipes.html#a4107b0ed38f5933b4ce883b91eacc595',1,'doublepipes']]],
+  ['bottomtype_13',['bottomType',['../classPipe.html#aa5d8fce96ed1b2cdd9b277b3ac2ba5be',1,'Pipe']]],
+  ['bright_14',['Bright',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a7659647d16a78c607f9bafaa207b9e07',1,'doctest::Color']]],
+  ['brightgreen_15',['BrightGreen',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a016090b96620a42a63dadf0265977664',1,'doctest::Color']]],
+  ['brightred_16',['BrightRed',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a236dfdbcd49d10dbf1a31f9e2947a671',1,'doctest::Color']]],
+  ['brightwhite_17',['BrightWhite',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a4f80853796b4875d61ff5e4ad138492e',1,'doctest::Color']]],
+  ['buf_18',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]],
+  ['button_19',['Button',['../structButton.html',1,'']]],
+  ['buttons_20',['buttons',['../classGameOverMenu.html#a414f55bd27397b7f3158cbee39419884',1,'GameOverMenu::buttons'],['../classPrincipalMenu.html#ad49ad439bb986e30678b1a06b236693b',1,'PrincipalMenu::buttons']]]
+];

@@ -1,0 +1,34 @@
+\doxysection{listplayers.\+hpp}
+\hypertarget{listplayers_8hpp_source}{}\label{listplayers_8hpp_source}\index{include/listplayers.hpp@{include/listplayers.hpp}}
+\mbox{\hyperlink{listplayers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LISTPLAYERS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LISTPLAYERS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <allegro5/allegro\_font.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{menu_8hpp}{menu.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{playermanager_8hpp}{playermanager.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classListPlayers}{ListPlayers}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMenu}{Menu}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{classPlayerManager}{PlayerManager}}*\ \mbox{\hyperlink{classListPlayers_a4d7fe220e160403dcbb42b51ed1711bf}{playerManager}};}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<Player>\ \mbox{\hyperlink{classListPlayers_af025f4c2f3c93c0388358f1bb5423833}{rankedPlayers}};}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classListPlayers_ac161b40049479640806d298782f9cdc7}{nextState}};}
+\DoxyCodeLine{00013\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classListPlayers_acb28114f830ee365ec2acbe228a6b98c}{font}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classListPlayers_a7f3d756b39019eb6c2603b9b725ddf4e}{scrollOffset}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListPlayers_a84821aacd550c18785f48d770bde9de2}{refreshPlayerList}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classListPlayers}{ListPlayers}}(ALLEGRO\_FONT*\ \mbox{\hyperlink{classListPlayers_acb28114f830ee365ec2acbe228a6b98c}{font}},\ \mbox{\hyperlink{classPlayerManager}{PlayerManager}}*\ manager);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListPlayers_adeb19a98d86497f17a91d8f10154d0e4}{ProcessEvent}}(\textcolor{keyword}{const}\ ALLEGRO\_EVENT\&\ event)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListPlayers_a4e8a58cab3722f40aaf5c77f014cb526}{Draw}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{menu_8hpp_aa3041ae4242c0dd57a126d17505443b2}{MenuState}}\ \mbox{\hyperlink{classListPlayers_a0e72412a98141c8fc3eef9449c207d92}{getNextState}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classListPlayers_ad36ea6e69aee01666389ec52afb0288b}{Reset}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<Player>\&\ \mbox{\hyperlink{classListPlayers_a654076a68e8b3ebc97cbd4509401179a}{getPlayers}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classListPlayers_af025f4c2f3c93c0388358f1bb5423833}{rankedPlayers}};\ \}}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classListPlayers_ad9ce741f9794d9da7629ffa4499ee306}{getScrollOffset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classListPlayers_a7f3d756b39019eb6c2603b9b725ddf4e}{scrollOffset}};\ \}}
+\DoxyCodeLine{00025\ \ \ \ \ ALLEGRO\_FONT*\ \mbox{\hyperlink{classListPlayers_ad844b1979ed0e27d20cd1b5d80fbbc3b}{getFont}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classListPlayers_acb28114f830ee365ec2acbe228a6b98c}{font}};\ \}}
+\DoxyCodeLine{00026\ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
