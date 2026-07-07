@@ -6,12 +6,17 @@
 
 enum class MenuState {
     None,
-    Game,
-    PlayerRegister,
-    Statistics,
-    DeletePlayer,
-    RestartGame,
-    GoToMainMenu,
+    Login, // Tela de login redireciona pra loggedmenu
+    PlayerRegister, // Tela de cadastro de novo jogador
+    Statistics, // Tela de estatísticas (ranking)
+    DeletePlayer, // Tela de exclusão de jogador
+    RestartGame, // Tela de reinício do jogo
+    GoToMainMenu, 
+    Options, // Tela de opções
+    Logout, // Tela de deslogar
+    PlayGame, // Tela de jogo
+    Status, // Tela de status do jogador 
+    Map, // Tela de mapa
     Exit
 };
 
@@ -24,6 +29,9 @@ struct Player {
     std::string name;
     std::string nickname;
     int score;
+    int gamesPlayed;
+    int mapsPlayed[3];
+    std::string dateRegistered;
 };
 class Menu {
 public:

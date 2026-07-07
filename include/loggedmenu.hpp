@@ -1,38 +1,38 @@
-#ifndef PRINCIPALMENU_HPP
-#define PRINCIPALMENU_HPP
+#ifndef LOGGEDMENU_HPP
+#define LOGGEDMENU_HPP
 
 #include <allegro5/allegro_font.h>
-#include <allegro5/allegro_audio.h>
-#include <vector>       
- 
-#include "menu.hpp"      
+#include <string>
+#include <vector>
 
-class PrincipalMenu : public Menu {
+#include "menu.hpp"
+
+class LoggedMenu : public Menu {
+
 private:
     ALLEGRO_BITMAP* background;
     ALLEGRO_FONT* fontMenu;
-    ALLEGRO_FONT* fontTitle;
-    ALLEGRO_AUDIO_STREAM* musicMenu;
-    
-    std::vector<Button> buttons;
+
     float backgroundX;
+    std::vector<Button> buttons;
     MenuState nextState; 
-    bool CheckCollision(float mouse_x, float mouse_y, const Button& button); 
+    bool CheckCollision(float mouse_x, float mouse_y, const Button& button);
 
 public:
-    PrincipalMenu(ALLEGRO_DISPLAY* display);
-    ~PrincipalMenu();
+    LoggedMenu(ALLEGRO_DISPLAY* display);
+    ~LoggedMenu();
 
     void ProcessEvent(const ALLEGRO_EVENT& event) override;
     void Draw() override;
+
     ALLEGRO_BITMAP* getBackground() const { return background; }
     ALLEGRO_FONT* getFont() const { return fontMenu; }
     const std::vector<Button>& getButtons() const { return buttons; }
     float getBackgroundX() const { return backgroundX; }
-    ALLEGRO_FONT* getFontTitle() const { return fontTitle; }
-    MenuState getNextState() override; 
+    MenuState getNextState() override;
     void Reset() override;
     void Update();
+
 };
 
 #endif

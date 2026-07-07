@@ -13,11 +13,14 @@
 #include "floor.hpp"
 #include "gameovermenu.hpp"
 #include "listplayers.hpp"
+#include "loggedmenu.hpp"
+#include "mapMenu.hpp"
 #include "nicknameinput.hpp"
 #include "pipe.hpp"
 #include "principalmenu.hpp"
 #include "register.hpp"
 #include "score.hpp"
+#include "statusMenu.hpp"
 
 class graphloader {
     
@@ -47,6 +50,9 @@ public:
     void DrawNicknameInputMenu(const NicknameInput& menu, ALLEGRO_FONT* font);
     void DrawDeleteMenu(const DeleteMenu& menu);
     void DrawExitConfirmMenu(const ExitConfirmMenu& menu);
+    void DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname);
+    void DrawMapMenu(const MapMenu& menu, ALLEGRO_FONT* font);
+    void DrawStatusMenu(const StatusMenu& menu, const Player& player);
 };
 
 #endif

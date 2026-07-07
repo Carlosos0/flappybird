@@ -16,12 +16,14 @@
 #include "gameovermenu.hpp"
 #include "graphloader.hpp"
 #include "input.hpp"
+#include "loggedmenu.hpp"
 #include "nicknameinput.hpp"
 #include "pipeControl.hpp"
 #include "playermanager.hpp"
 #include "principalmenu.hpp"
 #include "register.hpp"
 #include "score.hpp"
+#include "statusMenu.hpp"
 
 
 enum class GameState {
@@ -34,6 +36,10 @@ enum class GameState {
     Paused,
     GameOver,
     CountDown,
+    OptionsScreen,
+    LoggedMenu,
+    StatusPlayer,
+    MapChooser,
     ExitConfirm
 };
 
@@ -88,6 +94,9 @@ class gamecontroller {
     std::unique_ptr<NicknameInput> nicknameInputMenu;
     std::unique_ptr<DeleteMenu> deleteMenu;
     std::unique_ptr<ExitConfirmMenu> exitConfirmMenu;
+    std::unique_ptr<LoggedMenu> loggedMenu;
+    std::unique_ptr<MapMenu> mapMenu;
+    std::unique_ptr<StatusMenu> statusMenu;
 
     graphloader gameLoader;
     input gameInput;

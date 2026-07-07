@@ -47,6 +47,9 @@ void gamecontroller::SetupNewGame() {
         gameScore->resetScore();
     }
     
+    if (!currentPlayerNickname.empty()) {
+        playerManager->registerPlayer(currentPlayerNickname, mapMenu->getSelectedMap());
+    }
     StartCountdown();
 }
 
@@ -69,7 +72,7 @@ void gamecontroller::UpdateCountdown() {
     }
 }
 
-// --- FUNÇÃO DE INICIALIZAÇÃO ---
+// INICIALIZAÇÃO DAS FERRAMENTAS
 bool gamecontroller::InitTools(){
     if (!al_init()) { return false; }
     
@@ -90,6 +93,7 @@ bool gamecontroller::InitTools(){
     
     loadingFont = al_load_font("./assets/flapy.TTF", 30, 0);
 
+    // TELA DE CARREGAMENTO
     if (loadingFont)    
     {
         gameLoader.Clear();
@@ -131,7 +135,9 @@ bool gamecontroller::InitTools(){
     listPlayersMenu = std::make_unique<ListPlayers>(menuFont, playerManager.get());
     deleteMenu = std::make_unique<DeleteMenu>(menuFont, playerManager.get());
     exitConfirmMenu = std::make_unique<ExitConfirmMenu>();
-
+    loggedMenu = std::make_unique<LoggedMenu>(display);
+    mapMenu = std::make_unique<MapMenu>(display);
+    statusMenu = std::make_unique<StatusMenu>(display);
     return true;
 }
 
@@ -143,7 +149,8 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
     }
 
     switch (currentState) {
-           case GameState::mainmenu:
+
+        case GameState::mainmenu:
 
             if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
                 currentState = GameState::ExitConfirm;
@@ -157,25 +164,20 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
             gameMenu->ProcessEvent(event);
             { 
                 MenuState action = gameMenu->getNextState();
-                if (action == MenuState::Game) {
+                
+                // MENU PRINCIPAL DE LOGIN
+                if (action == MenuState::Login) {
                     currentState = GameState::NicknameInput;
                     nicknameInputMenu->Reset();
                     gameMenu->Reset();
-                } else if (action == MenuState::PlayerRegister) {
+                }
+                // CADASTRAR
+                else if (action == MenuState::PlayerRegister) {
                     currentState = GameState::PlayerRegister;
                     registerMenu->Reset();
                     gameMenu->Reset();
-                } else if (action == MenuState::Statistics) {
-                    currentState = GameState::Statistics;
-                    listPlayersMenu->Reset();
-                    gameMenu->Reset();
-                }
-                else if (action == MenuState::DeletePlayer) {
-                    currentState = GameState::DeletePlayer;
-                    deleteMenu->Reset();
-                    gameMenu->Reset();
-                }
-                
+                } 
+                // SAIR DO JOGO        
                 else if (action == MenuState::Exit) {
                     currentState = GameState::ExitConfirm;
                     if (exitConfirmMenu) {
@@ -183,39 +185,169 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
                     }
                     gameMenu->Reset();
                 }
-                
+                // RANKING
+                else if (action == MenuState::Statistics) {
+                    currentState = GameState::Statistics;
+                    listPlayersMenu->Reset();
+                    gameMenu->Reset();
+                }
+                // OPÇÕES
+                else if (action == MenuState::Options) {
+                    currentState = GameState::OptionsScreen;
+                    gameMenu->Reset();
+                }
                 break;
             }
 
-                case GameState::ExitConfirm:
+        case GameState::NicknameInput:
 
-                if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-                    currentState = GameState::mainmenu;
-                    exitConfirmMenu->Reset();
+            nicknameInputMenu->ProcessEvent(event);
+
+            if (nicknameInputMenu->getNextState() == MenuState::GoToMainMenu) {
+                currentState = GameState::mainmenu;
+            } 
+            else if (nicknameInputMenu->getNextState() == MenuState::Login) { 
+                std::string nickname = nicknameInputMenu->getNickname();
+
+                if (playerManager->nicknameExists(nickname)) {
+                    currentPlayerNickname = nickname;
+                    currentState = GameState::LoggedMenu;
+                    loggedMenu->Reset();
+                    mapMenu->mapReset();
+                } else {
+                    nicknameInputMenu->setErrorMessage("Apelido nao cadastrado!");
                 }
-                
-                exitConfirmMenu->ProcessEvent(event);
-                {
-                    MenuState action = exitConfirmMenu->getNextState();
-                    if (action == MenuState::GoToMainMenu) {
-                        currentState = GameState::mainmenu;
+            }
+            break;
+
+        case GameState::LoggedMenu:
+            loggedMenu->ProcessEvent(event);
+            {
+                MenuState action = loggedMenu->getNextState();
+                // JOGAR
+                if (action == MenuState::PlayGame) {
+                    SetupNewGame();
+                    loggedMenu->Reset();
+                }
+                // OPCOES
+                else if (action == MenuState::Options) {
+                    currentState = GameState::OptionsScreen;
+                    loggedMenu->Reset();
+                }
+                // RANKING
+                else if (action == MenuState::Statistics) {
+                    currentState = GameState::Statistics;
+                    listPlayersMenu->Reset();
+                }
+                // STATUS
+                else if (action == MenuState::Status) {
+                    currentState = GameState::StatusPlayer;
+                    // deleteMenu->Reset();
+                }
+                // LOGOUT
+                else if (action == MenuState::Logout) {
+                    currentPlayerNickname.clear();
+                    currentState = GameState::mainmenu;
+                    loggedMenu->Reset();
+                    mapMenu->mapReset();
+                    // ALTERAR: LOGOUT LEVA PRA UMA TELA (DESLOGAR OU DESLOGAR E SAIR)
+                }
+                // MAPA
+                else if (action == MenuState::Map) {
+                    currentState = GameState::MapChooser;
+                    mapMenu->Reset();
+                    loggedMenu->Reset();
+                }
+                // SAIR
+                else if (action == MenuState::Exit) {
+                    currentState = GameState::ExitConfirm;
+                    if (exitConfirmMenu) {
                         exitConfirmMenu->Reset();
-                    } 
-                    else if (action == MenuState::Exit) {
-                        playing = false;
                     }
-                    break;
+                    loggedMenu->Reset();
                 }
+            }
+            break;
 
+        case GameState::ExitConfirm:
 
-                case GameState::DeletePlayer:
-                     deleteMenu->ProcessEvent(event);
-                    if (deleteMenu->getNextState() == MenuState::GoToMainMenu) {
+            if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+                if (currentPlayerNickname.empty()) {
                     currentState = GameState::mainmenu;
+                }
+                else {
+                    currentState = GameState::LoggedMenu;
+                }
+                exitConfirmMenu->Reset();
+            }
+                
+            exitConfirmMenu->ProcessEvent(event);
+            {
+                MenuState action = exitConfirmMenu->getNextState();
+                if (action == MenuState::GoToMainMenu) {
+                    if (currentPlayerNickname.empty()) {
+                        currentState = GameState::mainmenu;
+                    }
+                    else {
+                        currentState = GameState::LoggedMenu;
+                    }
+                    exitConfirmMenu->Reset();
+                } 
+                else if (action == MenuState::Exit) {
+                    playing = false;
+                }
+                break;
+            }
+
+        case GameState::StatusPlayer:
+            statusMenu->ProcessEvent(event);
+            {
+                if (statusMenu->getNextState() == MenuState::GoToMainMenu) {
+                    currentState = GameState::LoggedMenu;
+                    statusMenu->Reset();
+                    loggedMenu->Reset();
+                }
             }
             break;
             
+        case GameState::MapChooser:
+            if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+                currentState = GameState::LoggedMenu;
+                mapMenu->Reset();
+                loggedMenu->Reset();
+                break;
+            }
 
+            mapMenu->ProcessEvent(event);
+            {
+                MenuState action = mapMenu->getNextState();
+
+                if (action == MenuState::GoToMainMenu) {
+                    currentState = GameState::LoggedMenu;
+                    mapMenu->Reset();
+                    loggedMenu->Reset();
+                }
+            }
+            break;
+
+        case GameState::DeletePlayer:
+            deleteMenu->ProcessEvent(event);
+            if (deleteMenu->getNextState() == MenuState::GoToMainMenu) {
+                currentState = GameState::mainmenu;
+            }
+            break;
+
+        case GameState::OptionsScreen:
+            if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+                if (currentPlayerNickname.empty()) {
+                    currentState = GameState::mainmenu;
+                }
+                else {
+                    currentState = GameState::LoggedMenu;
+                }
+            }
+            break;
+            
         case GameState::PlayerRegister:
             registerMenu->ProcessEvent(event);
             {
@@ -228,29 +360,25 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
                 }
             }
             break;
-
-        case GameState::NicknameInput:
-            nicknameInputMenu->ProcessEvent(event);
-            if (nicknameInputMenu->getNextState() == MenuState::GoToMainMenu) {
-                currentState = GameState::mainmenu;
-            } else if (nicknameInputMenu->getNextState() == MenuState::Game) { 
-                std::string nickname = nicknameInputMenu->getNickname();
-                if (playerManager->nicknameExists(nickname)) {
-                    currentPlayerNickname = nickname;
-                    SetupNewGame();
-                } else {
-                    nicknameInputMenu->setErrorMessage("Apelido nao cadastrado!");
-                }
-            }
-            break;
         
-            case GameState::Statistics:
+        case GameState::Statistics:
+
             listPlayersMenu->ProcessEvent(event);
             if (listPlayersMenu->getNextState() == MenuState::GoToMainMenu) {
-                currentState = GameState::mainmenu;
+                if(currentPlayerNickname.empty()) {
+                    currentState = GameState::mainmenu;
+                    loggedMenu->Reset();
+                } 
+                else {
+                    currentState = GameState::LoggedMenu;
+                    loggedMenu->Reset();
+                }
+                listPlayersMenu->Reset();
             }
             break;
+
         case GameState::Playing:
+
             gameInput.InputEvent(event);
             if (event.type == ALLEGRO_EVENT_KEY_DOWN && event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
                 currentState = GameState::Paused;
@@ -264,6 +392,7 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
             break;
 
         case GameState::GameOver:
+
             gameoverMenu->ProcessEvent(event);
             {
                 MenuState action = gameoverMenu->getNextState();
@@ -271,7 +400,7 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
                     SetupNewGame();
                     gameoverMenu->Reset();
                 } else if (action == MenuState::GoToMainMenu) {
-                    currentState = GameState::mainmenu;
+                    currentState = GameState::LoggedMenu;
                     gameoverMenu->Reset();
                 }
             }
@@ -298,7 +427,13 @@ void gamecontroller::EventsProcessor(const ALLEGRO_EVENT& event) {
             gameMenu->Update(); 
         } else if (currentState == GameState::CountDown) {
             UpdateCountdown();
+        } else if (currentState == GameState::LoggedMenu) {
+            loggedMenu->Update();
         }
+        else if (currentState == GameState::MapChooser) {
+            mapMenu->Update();
+        }
+        
     }
 }
 
@@ -356,8 +491,26 @@ void gamecontroller::Render(){
             gameLoader.DrawDeleteMenu(*deleteMenu);
             break;
 
+        case GameState::LoggedMenu:
+            gameLoader.DrawLoggedMenu(*loggedMenu, currentPlayerNickname);
+            break;
+            
         case GameState::ExitConfirm:
             gameLoader.DrawExitConfirmMenu(*exitConfirmMenu);
+            break;
+        
+        case GameState::MapChooser:
+            gameLoader.DrawMapMenu(*mapMenu, menuFont);
+            break;
+
+        case GameState::StatusPlayer: 
+        {
+            Player p = playerManager->getPlayerInfo(currentPlayerNickname);
+            gameLoader.DrawStatusMenu(*statusMenu, p);
+            break;
+        }
+        
+        case GameState::OptionsScreen:
             break;
         
         case GameState::Playing:

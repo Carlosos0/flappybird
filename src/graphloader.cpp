@@ -393,3 +393,77 @@ void graphloader::DrawExitConfirmMenu(const ExitConfirmMenu& menu) {
     DrawButton({300.0f, 300.0f, 200.0f, 50.0f, "SAIR", MenuState::Exit}, font);
     DrawButton({300.0f, 350.0f, 200.0f, 50.0f, "VOLTAR", MenuState::GoToMainMenu}, font);
 }
+
+void graphloader::DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname) {
+    ALLEGRO_BITMAP* background = menu.getBackground();
+    if (background) {
+        float bgX = menu.getBackgroundX(); 
+        al_draw_bitmap(background, bgX, 0, 0);
+        al_draw_bitmap(background, bgX + al_get_bitmap_width(background), 0, 0);
+    }
+
+    ALLEGRO_FONT* fontMenu = menu.getFont();
+    if (fontMenu) {
+        ALLEGRO_COLOR titleColor = al_map_rgb(255, 255, 0); 
+        ALLEGRO_COLOR shadowColor = al_map_rgb(255, 200, 12);
+        std::string welcomeText = "Bem-vindo(a), " + lgNickname + "!";
+        al_draw_text(fontMenu, shadowColor, 800 / 2 + 4, 80 + 4, ALLEGRO_ALIGN_CENTER, welcomeText.c_str());
+        al_draw_text(fontMenu, titleColor, 800 / 2, 80, ALLEGRO_ALIGN_CENTER, welcomeText.c_str());
+    }
+
+    const std::vector<Button>& buttons = menu.getButtons();
+    for (const Button& btn : buttons) {
+        DrawButton(btn, fontMenu); 
+    }
+}
+
+void graphloader::DrawMapMenu(const MapMenu& menu, ALLEGRO_FONT* font) {
+    ALLEGRO_BITMAP* background = menu.getBackground();
+
+    if (background) {
+        float bgX = menu.getBackgroundX();
+        al_draw_bitmap(background, bgX, 0, 0);
+        al_draw_bitmap(background, bgX + al_get_bitmap_width(background), 0, 0);
+    }
+    
+    al_draw_text(font, al_map_rgb(255,255,255), 400, 50, ALLEGRO_ALIGN_CENTER, "SELECIONE O MAPA");
+    DrawButton(menu.getLeftButton(), font);
+    DrawButton(menu.getRightButton(), font);
+
+    al_draw_filled_rectangle(280, 250, 520, 300, al_map_rgb(30, 30, 60));
+    al_draw_rectangle(280, 250, 520, 300, al_map_rgb(150,150,150), 2);
+
+    std::string selectedMapName = menu.getSelectedMapName();
+    al_draw_text(font, al_map_rgb(255,255,255), 400, 270, ALLEGRO_ALIGN_CENTER, selectedMapName.c_str());
+
+    DrawButton(menu.getSaveButton(), font);
+    DrawButton(menu.getBackButton(), font);
+}
+
+void graphloader::DrawStatusMenu(const StatusMenu& menu, const Player& player) {
+    al_clear_to_color(al_map_rgb(10, 20, 50));
+    ALLEGRO_FONT* font = menu.getFont();
+
+    al_draw_filled_rectangle(150, 100, 650, 400, al_map_rgb(30, 30, 60));
+    al_draw_rounded_rectangle(150, 100, 650, 400, 8, 8, al_map_rgb(150,150,150), 2);
+
+    std::string title = player.nickname;
+    al_draw_text(font, al_map_rgb(255, 255, 255), 400, 120, ALLEGRO_ALIGN_CENTER, title.c_str());
+
+    std::string MapsPlayed[] = {"Terra", "Lua", "Marte"};
+    int maxPlays = -1;
+    std::string mostPlayedMap = "N/A";
+    for (int i = 0; i < 3; ++i) {
+        if (player.mapsPlayed[i] > maxPlays && player.mapsPlayed[i] > 0) {
+            maxPlays = player.mapsPlayed[i];
+            mostPlayedMap = MapsPlayed[i];
+        }
+    }
+
+    al_draw_textf(font, al_map_rgb(255, 255, 255), 400, 180, ALLEGRO_ALIGN_CENTER, "Jogos Jogados: %d", player.gamesPlayed);
+    al_draw_textf(font, al_map_rgb(255, 255, 255), 400, 220, ALLEGRO_ALIGN_CENTER, "Mapa Mais Jogados: %s", mostPlayedMap.c_str());
+    al_draw_textf(font, al_map_rgb(255, 255, 255), 400, 260, ALLEGRO_ALIGN_CENTER, "Melhor Pontuação: %d", player.score);
+    al_draw_textf(font, al_map_rgb(255, 255, 255), 400, 300, ALLEGRO_ALIGN_CENTER, "Usuário desde: %s", player.dateRegistered.c_str());
+
+    DrawButton(menu.getBtnVoltar(), font);
+}

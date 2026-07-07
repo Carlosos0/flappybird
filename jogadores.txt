@@ -1,6 +1,6 @@
-andre;dede;14
-ksren2;kaka;5
-Carlos ;Carlos;24
-sabrina;sah;7
-joao pedro;jp;17
-Liz Rene;Liz;14
+Carlos;carlso;27;187;7;0;0;DEV
+ksren2;kaka;5;15;0;0;0;DEV
+joao;jp;17;20;0;0;0;SEMPRE!<3
+andre;dede;14;8;0;0;0;SEMPRE!<3
+sabrina;sah;7;3;0;0;0;SEMPRE!<3
+Liz;Rene;8;3;0;0;0;SEMPRE!<3

@@ -18,7 +18,8 @@ public:
     PlayerManager(); 
     ~PlayerManager();
 
-    // --- INTERFACE PÚBLICA ---
+    void registerPlayer(const std::string& name, int mapID);
+    Player getPlayerInfo(const std::string& nickname) const;
     bool deletePlayer(const std::string& nickname);
     bool nicknameExists(const std::string& nickname) const;
     bool addNewPlayer(const std::string& name, const std::string& nickname);

@@ -20,7 +20,7 @@ void NicknameInput::ProcessEvent(const ALLEGRO_EVENT& event) {
         if (event.keyboard.keycode != ALLEGRO_KEY_ENTER) showError = false;
         switch (event.keyboard.keycode) {
             case ALLEGRO_KEY_ESCAPE: nextState = MenuState::GoToMainMenu; break;
-            case ALLEGRO_KEY_ENTER: case ALLEGRO_KEY_PAD_ENTER: nextState = MenuState::Game; break;
+            case ALLEGRO_KEY_ENTER: case ALLEGRO_KEY_PAD_ENTER: nextState = MenuState::Login; break;
             case ALLEGRO_KEY_BACKSPACE: if (!currentNickname.empty()) currentNickname.pop_back(); break;
         }
     } else if (event.type == ALLEGRO_EVENT_KEY_CHAR && event.keyboard.unichar >= 32) {
