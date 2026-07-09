@@ -33,11 +33,22 @@ ALLEGRO_EVENT_QUEUE* gamecontroller::getEventQueue() const {
 
 void gamecontroller::SetupNewGame() {
     newRecord = false;
+
+    int mapId = 0;
+    if (mapMenu) {
+        mapId = mapMenu->getSelectedMap();
+    }
+    
+    std::cout << "O JOGO LEU O MAPA NUMERO: " << mapId << std::endl;
+
+    gameAmbience->setBackground(bkgImg[mapId]);
+    gameFloor->setImage(floorImg[mapId]);
+
     gameBird = std::make_unique<bird>(vetor(200, SCREEN_H / 2), birdImg, 
                 gameBirdWidth, gameBirdHeight, true, 0.0f);
     gameBird->setAmbience(gameAmbience);
 
-    gamePControl = std::make_unique<pipeControl>(pipeImg, 150, 350, 
+    gamePControl = std::make_unique<pipeControl>(pipeImg[mapId], 150, 350, 
                     gamePipeWidth, gamePipeHeight, SCREEN_W, SCREEN_H);
     
     gameCrash = std::make_unique<Crash>();
@@ -48,7 +59,7 @@ void gamecontroller::SetupNewGame() {
     }
     
     if (!currentPlayerNickname.empty()) {
-        playerManager->registerPlayer(currentPlayerNickname, mapMenu->getSelectedMap());
+        playerManager->registerPlayer(currentPlayerNickname, mapId);
     }
     StartCountdown();
 }
@@ -102,17 +113,32 @@ bool gamecontroller::InitTools(){
     }
     
     // Carregamento de assets
+
+    // FONTES
     menuFont = al_load_font("./assets/flapy.TTF", 24, 0);
     smallFont = al_load_font("./assets/flapy.TTF", 18, 0);
     gameOverFont = al_load_font("./assets/flapy.TTF", 34, 0);
-    scoreFont = al_load_font("./assets/DIMITRI_.TTF", 64, 0);    
+    scoreFont = al_load_font("./assets/DIMITRI_.TTF", 64, 0);
+
+    // TERRA
     birdImg = graphloader::ScaleBitmap("./assets/bird.png", gameBirdWidth, gameBirdHeight, display);
-    pipeImg = graphloader::ScaleBitmap("./assets/fbpipe4.png", gamePipeWidth, gamePipeHeight, display);
-    bkgImg = graphloader::ScaleBitmap("./assets/fpbkg1.png", SCREEN_W, SCREEN_H, display);
-    floorImg = graphloader::ScaleBitmap("./assets/floor.png", SCREEN_W, gameFloorHeight, display);
+    pipeImg[0] = graphloader::ScaleBitmap("./assets/earthpipe.png", gamePipeWidth, gamePipeHeight, display);
+    bkgImg[0] = graphloader::ScaleBitmap("./assets/earth.png", SCREEN_W, SCREEN_H, display);
+    floorImg[0] = graphloader::ScaleBitmap("./assets/earthfloor.png", SCREEN_W, gameFloorHeight, display);
+
+    // LUA
+    pipeImg[1] = graphloader::ScaleBitmap("./assets/moonpipe.png", gamePipeWidth, gamePipeHeight, display);
+    bkgImg[1] = graphloader::ScaleBitmap("./assets/moon.png", SCREEN_W, SCREEN_H, display);
+    floorImg[1] = graphloader::ScaleBitmap("./assets/moonfloor.png", SCREEN_W, gameFloorHeight, display);
+
+    // MARTE
+    pipeImg[2] = graphloader::ScaleBitmap("./assets/marspipe.png", gamePipeWidth, gamePipeHeight, display);
+    bkgImg[2] = graphloader::ScaleBitmap("./assets/mars.png", SCREEN_W, SCREEN_H, display);
+    floorImg[2] = graphloader::ScaleBitmap("./assets/marsfloor.png", SCREEN_W, gameFloorHeight, display);
+
     menuPrincipalImg = graphloader::ScaleBitmap("./assets/fpbkg1.png", SCREEN_W, SCREEN_H, display);
     
-    if (!birdImg || !pipeImg || !bkgImg || !floorImg || !loadingFont || !menuFont || !scoreFont || !smallFont) {
+    if (!birdImg || !pipeImg[0] || !bkgImg[0] || !floorImg[0] || !pipeImg[1]|| !bkgImg[1] || !floorImg[1] || !pipeImg[2]|| !bkgImg[2] || !floorImg[2] || !loadingFont || !menuFont || !scoreFont || !smallFont) {
         std::cout << "FALHA NA INICIALIZACAO. VERIFICAR AS ASSETS CARREGADAS." << std::endl;
         MemoryClear();
         return false;
@@ -123,8 +149,8 @@ bool gamecontroller::InitTools(){
     al_register_event_source(queue, al_get_timer_event_source(timer));
     al_register_event_source(queue, al_get_mouse_event_source());
 
-    gameAmbience = std::make_shared<ambience>(vetor(0, 0.5f), bkgImg);
-    gameFloor = std::make_shared<floor>(vetor(0, SCREEN_H - gameFloorHeight), floorImg, SCREEN_W, gameFloorHeight);
+    gameAmbience = std::make_shared<ambience>(vetor(0, 0.5f), bkgImg[0]);
+    gameFloor = std::make_shared<floor>(vetor(0, SCREEN_H - gameFloorHeight), floorImg[0], SCREEN_W, gameFloorHeight);
     gameMenu = std::make_unique<PrincipalMenu>(display);
     gameoverMenu = std::make_unique<GameOverMenu>();
     gameScore = std::make_unique<score>();
@@ -547,10 +573,15 @@ void gamecontroller::Render(){
 
 // --- LIMPEZA DE MEMÓRIA ---
 void gamecontroller::MemoryClear(){
-    al_destroy_bitmap(bkgImg); bkgImg = nullptr;
-    al_destroy_bitmap(pipeImg); pipeImg = nullptr;
+    
+    for (int i = 0; i < 3; i++)
+    {
+        if (bkgImg[i]) al_destroy_bitmap(bkgImg[i]); bkgImg[i] = nullptr;
+        if (pipeImg[i]) al_destroy_bitmap(pipeImg[i]); pipeImg[i] = nullptr;
+        if (floorImg[i]) al_destroy_bitmap(floorImg[i]); floorImg[i] = nullptr;
+    }
+    
     al_destroy_bitmap(birdImg); birdImg = nullptr;
-    al_destroy_bitmap(floorImg); floorImg = nullptr;
     al_destroy_bitmap(menuPrincipalImg); menuPrincipalImg = nullptr; 
     al_destroy_font(menuFont); menuFont = nullptr;
     al_destroy_font(loadingFont); loadingFont = nullptr;

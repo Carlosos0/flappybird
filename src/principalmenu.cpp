@@ -7,7 +7,7 @@ PrincipalMenu::PrincipalMenu(ALLEGRO_DISPLAY* display) {
 
     // Plano de fundo do menu
     backgroundX = 0; 
-    background = graphloader::ScaleBitmap("./assets/fpbkg1.png", 800, 600, display); 
+    background = graphloader::ScaleBitmap("./assets/earth.png", 800, 600, display); 
     fontMenu = al_load_font("./assets/PressStart2P-Regular.ttf", 20, 0);  
     fontTitle = al_load_font("./assets/PressStart2P-Regular.ttf", 52, 0); 
     

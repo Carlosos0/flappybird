@@ -3,7 +3,7 @@
 
 MapMenu::MapMenu(ALLEGRO_DISPLAY* display) : selectedMap(0), nextState(MenuState::None) {
     backgroundX = 0; 
-    background = graphloader::ScaleBitmap("./assets/fpbkg1.png", 800, 600, display); 
+    background = graphloader::ScaleBitmap("./assets/earth.png", 800, 600, display); 
     fontMenu = al_load_font("./assets/PressStart2P-Regular.ttf", 20, 0);  
     
     if (!background) { printf("ERRO: Nao carregou o background do menu.\n"); }

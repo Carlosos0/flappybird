@@ -69,9 +69,9 @@ class gamecontroller {
     ALLEGRO_TIMER *timer;  
     
     ALLEGRO_BITMAP* birdImg = nullptr;
-    ALLEGRO_BITMAP* pipeImg = nullptr;
-    ALLEGRO_BITMAP* bkgImg = nullptr;
-    ALLEGRO_BITMAP* floorImg = nullptr;
+    ALLEGRO_BITMAP* pipeImg[3] = { nullptr, nullptr, nullptr };
+    ALLEGRO_BITMAP* bkgImg[3] = { nullptr, nullptr, nullptr };
+    ALLEGRO_BITMAP* floorImg[3] = { nullptr, nullptr, nullptr };
     ALLEGRO_BITMAP* menuPrincipalImg = nullptr;
     ALLEGRO_FONT* loadingFont = nullptr;
     ALLEGRO_FONT* scoreFont = nullptr;

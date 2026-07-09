@@ -1,5 +1,5 @@
-Carlos;carlso;27;187;7;0;0;DEV
-ksren2;kaka;5;15;0;0;0;DEV
+Carlos;carlso;27;317;108;22;7;PRIMÓRDIO
+ksren2;kaka;5;15;0;0;0;PRIMÓRDIO
 joao;jp;17;20;0;0;0;SEMPRE!<3
 andre;dede;14;8;0;0;0;SEMPRE!<3
 sabrina;sah;7;3;0;0;0;SEMPRE!<3
