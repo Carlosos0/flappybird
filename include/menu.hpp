@@ -22,6 +22,7 @@ enum class MenuState {
 
 struct Button {
     float x, y, width, height;
+    // ALLEGRO_BITMAP* image;
     const char* text;
     MenuState action; 
 };

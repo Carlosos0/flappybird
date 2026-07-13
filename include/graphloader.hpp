@@ -50,7 +50,7 @@ public:
     void DrawNicknameInputMenu(const NicknameInput& menu, ALLEGRO_FONT* font);
     void DrawDeleteMenu(const DeleteMenu& menu);
     void DrawExitConfirmMenu(const ExitConfirmMenu& menu);
-    void DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname);
+    void DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname, const std::string& mapName);
     void DrawMapMenu(const MapMenu& menu, ALLEGRO_FONT* font);
     void DrawStatusMenu(const StatusMenu& menu, const Player& player);
 };

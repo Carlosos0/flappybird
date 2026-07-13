@@ -38,8 +38,6 @@ void gamecontroller::SetupNewGame() {
     if (mapMenu) {
         mapId = mapMenu->getSelectedMap();
     }
-    
-    std::cout << "O JOGO LEU O MAPA NUMERO: " << mapId << std::endl;
 
     gameAmbience->setBackground(bkgImg[mapId]);
     gameFloor->setImage(floorImg[mapId]);
@@ -518,7 +516,7 @@ void gamecontroller::Render(){
             break;
 
         case GameState::LoggedMenu:
-            gameLoader.DrawLoggedMenu(*loggedMenu, currentPlayerNickname);
+            gameLoader.DrawLoggedMenu(*loggedMenu, currentPlayerNickname, mapMenu->getSelectedMapName());
             break;
             
         case GameState::ExitConfirm:

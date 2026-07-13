@@ -9,22 +9,22 @@ PrincipalMenu::PrincipalMenu(ALLEGRO_DISPLAY* display) {
     backgroundX = 0; 
     background = graphloader::ScaleBitmap("./assets/earth.png", 800, 600, display); 
     fontMenu = al_load_font("./assets/PressStart2P-Regular.ttf", 20, 0);  
-    fontTitle = al_load_font("./assets/PressStart2P-Regular.ttf", 52, 0); 
+    fontTitle = al_load_font("./assets/PressStart2P-Regular.ttf", 65, 0); 
     
     if (!background) { printf("ERRO: Nao carregou o background do menu.\n"); }
     if (!fontMenu) { printf("ERRO: Nao carregou a fonte do menu.\n"); }
     if (!fontTitle) { printf("ERRO: Nao carregou a fonte do titulo.\n"); }
 
     // ENTRAR (LOGAR COM NOME DE USUARIO)
-    buttons.push_back({250.0f, 200.0f, 300.0f, 50.0f, "ENTRAR", MenuState::Login});
+    buttons.push_back({280.0f, 320.0f, 240.0f, 50.0f, "ENTRAR", MenuState::Login});
     // CADASTRAR NOVO JOGADOR
-    buttons.push_back({250.0f, 340.0f, 300.0f, 50.0f, "Cadastrar", MenuState::PlayerRegister});
+    buttons.push_back({280.0f, 390.0f, 240.0f, 50.0f, "Cadastrar", MenuState::PlayerRegister});
     // SAIR DO JOGO
-    buttons.push_back({250.0f, 410.0f, 300.0f, 50.0f, "SAIR", MenuState::Exit});
+    buttons.push_back({20.0f, 20.0f, 60.0f, 60.0f, "<-", MenuState::Exit});
     // OPÇÕES
-    buttons.push_back({250.0f, 250.0f, 300.0f, 50.0f, "OPÇÕES", MenuState::Options});
+    buttons.push_back({720.0f, 20.0f, 60.0f, 60.0f, "O", MenuState::Options});
     // RANKING
-    buttons.push_back({250.0f, 300.0f, 300.0f, 50.0f, "RANKING",  MenuState::Statistics});
+    buttons.push_back({720.0f, 90.0f, 60.0f, 60.0f, "RNK",  MenuState::Statistics});
     // buttons.push_back({250.0f, 410.0f, 300.0f, 50.0f, "Apagar Jogador", MenuState::DeletePlayer});
     Reset();
 }

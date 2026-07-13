@@ -14,19 +14,19 @@ LoggedMenu::LoggedMenu(ALLEGRO_DISPLAY* display) {
     if (!fontMenu) { printf("ERRO: Nao carregou a fonte do menu.\n"); }
 
     // JOGAR
-    buttons.push_back({250.0f, 200.0f, 300.0f, 50.0f, "JOGAR", MenuState::PlayGame});
+    buttons.push_back({250.0f, 280.0f, 300.0f, 50.0f, "JOGAR", MenuState::PlayGame});
     // OPÇÕES
-    buttons.push_back({250.0f, 250.0f, 300.0f, 50.0f, "OPÇÕES", MenuState::Options});
+    buttons.push_back({720.0f, 20.0f, 60.0f, 60.0f, "O", MenuState::Options});
     // RANKING
-    buttons.push_back({250.0f, 300.0f, 300.0f, 50.0f, "RANKING", MenuState::Statistics});
+    buttons.push_back({720.0f, 90.0f, 60.0f, 60.0f, "RNK",  MenuState::Statistics});
     // SAIR DO JOGO
-    buttons.push_back({250.0f, 350.0f, 300.0f, 50.0f, "SAIR", MenuState::Exit});
+    buttons.push_back({250.0f, 420.0f, 300.0f, 50.0f, "SAIR", MenuState::Exit});
     // DESLOGAR
-    buttons.push_back({250.0f, 400.0f, 300.0f, 50.0f, "DESLOGAR", MenuState::Logout});
+    buttons.push_back({20.0f, 20.0f, 60.0f, 60.0f, "<-", MenuState::Logout});
     // STATUS DO JOGADOR
-    buttons.push_back({250.0f, 450.0f, 300.0f, 50.0f, "STATUS", MenuState::Status});
+    buttons.push_back({250.0f, 80.0f, 300.0f, 100.0f, "STATUS", MenuState::Status});
     // MAPA
-    buttons.push_back({250.0f, 500.0f, 300.0f, 50.0f, "MAPA", MenuState::Map});
+    buttons.push_back({250.0f, 350.0f, 300.0f, 50.0f, "MAPAS", MenuState::Map});
 
 
     

@@ -155,8 +155,8 @@ void graphloader::DrawMenu(const PrincipalMenu& menu) {
         ALLEGRO_COLOR shadowColor = al_map_rgb(255, 200, 12); 
         
     
-        al_draw_text(titleFont, shadowColor, 800 / 2 + 4, 80 + 4, ALLEGRO_ALIGN_CENTER, "FLAPPY BIRD");
-        al_draw_text(titleFont, titleColor, 800 / 2, 80, ALLEGRO_ALIGN_CENTER, "FLAPPY BIRD");
+        al_draw_text(titleFont, shadowColor, 800 / 2 + 4, 200 + 4, ALLEGRO_ALIGN_CENTER, "FLAPPY BIRD");
+        al_draw_text(titleFont, titleColor, 800 / 2, 200, ALLEGRO_ALIGN_CENTER, "FLAPPY BIRD");
     }
     const std::vector<Button>& buttons = menu.getButtons();
     ALLEGRO_FONT* buttonFont = menu.getFont();
@@ -394,7 +394,7 @@ void graphloader::DrawExitConfirmMenu(const ExitConfirmMenu& menu) {
     DrawButton({300.0f, 350.0f, 200.0f, 50.0f, "VOLTAR", MenuState::GoToMainMenu}, font);
 }
 
-void graphloader::DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname) {
+void graphloader::DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNickname, const std::string& mapName) {
     ALLEGRO_BITMAP* background = menu.getBackground();
     if (background) {
         float bgX = menu.getBackgroundX(); 
@@ -403,17 +403,25 @@ void graphloader::DrawLoggedMenu(const LoggedMenu& menu, const std::string& lgNi
     }
 
     ALLEGRO_FONT* fontMenu = menu.getFont();
-    if (fontMenu) {
-        ALLEGRO_COLOR titleColor = al_map_rgb(255, 255, 0); 
-        ALLEGRO_COLOR shadowColor = al_map_rgb(255, 200, 12);
-        std::string welcomeText = "Bem-vindo(a), " + lgNickname + "!";
-        al_draw_text(fontMenu, shadowColor, 800 / 2 + 4, 80 + 4, ALLEGRO_ALIGN_CENTER, welcomeText.c_str());
-        al_draw_text(fontMenu, titleColor, 800 / 2, 80, ALLEGRO_ALIGN_CENTER, welcomeText.c_str());
-    }
-
     const std::vector<Button>& buttons = menu.getButtons();
+
     for (const Button& btn : buttons) {
-        DrawButton(btn, fontMenu); 
+
+        if (btn.action == MenuState::Status) {
+
+            al_draw_filled_rounded_rectangle(btn.x, btn.y, btn.x + btn.width, btn.y + btn.height, 15, 15, al_map_rgb(220, 230, 40));
+            al_draw_rounded_rectangle(btn.x, btn.y, btn.x + btn.width, btn.y + btn.height, 15, 15, al_map_rgb(0, 0, 0), 3);
+            
+            if (fontMenu) {
+                
+                al_draw_text(fontMenu, al_map_rgb(255, 255, 255), btn.x + btn.width / 2, btn.y + 25, ALLEGRO_ALIGN_CENTER, lgNickname.c_str());
+                al_draw_text(fontMenu, al_map_rgb(255, 255, 255), btn.x + btn.width / 2, btn.y + 65, ALLEGRO_ALIGN_CENTER, mapName.c_str());
+            }
+        } 
+
+        else {
+            DrawButton(btn, fontMenu); 
+        }
     }
 }
 
