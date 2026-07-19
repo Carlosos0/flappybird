@@ -33,6 +33,7 @@ ALLEGRO_EVENT_QUEUE* gamecontroller::getEventQueue() const {
 
 void gamecontroller::SetupNewGame() {
     newRecord = false;
+    deathTime = 0.0;
 
     int mapId = 0;
     if (mapMenu) {
@@ -42,7 +43,7 @@ void gamecontroller::SetupNewGame() {
     gameAmbience->setBackground(bkgImg[mapId]);
     gameFloor->setImage(floorImg[mapId]);
 
-    gameBird = std::make_unique<bird>(vetor(200, SCREEN_H / 2), birdImg, 
+    gameBird = std::make_unique<bird>(vetor(200, SCREEN_H / 2), birdFrames, 
                 gameBirdWidth, gameBirdHeight, true, 0.0f);
     gameBird->setAmbience(gameAmbience);
 
@@ -118,8 +119,12 @@ bool gamecontroller::InitTools(){
     gameOverFont = al_load_font("./assets/flapy.TTF", 34, 0);
     scoreFont = al_load_font("./assets/DIMITRI_.TTF", 64, 0);
 
+    birdFrames.push_back(graphloader::ScaleBitmap("./assets/birdUP.png", gameBirdWidth, gameBirdHeight, display));
+    birdFrames.push_back(graphloader::ScaleBitmap("./assets/birdMID.png", gameBirdWidth, gameBirdHeight, display));
+    birdFrames.push_back(graphloader::ScaleBitmap("./assets/birdDOWN.png", gameBirdWidth, gameBirdHeight, display));
+    birdFrames.push_back(graphloader::ScaleBitmap("./assets/birdDEAD.png", gameBirdWidth, gameBirdHeight, display));
+
     // TERRA
-    birdImg = graphloader::ScaleBitmap("./assets/bird.png", gameBirdWidth, gameBirdHeight, display);
     pipeImg[0] = graphloader::ScaleBitmap("./assets/earthpipe.png", gamePipeWidth, gamePipeHeight, display);
     bkgImg[0] = graphloader::ScaleBitmap("./assets/earth.png", SCREEN_W, SCREEN_H, display);
     floorImg[0] = graphloader::ScaleBitmap("./assets/earthfloor.png", SCREEN_W, gameFloorHeight, display);
@@ -136,7 +141,7 @@ bool gamecontroller::InitTools(){
 
     menuPrincipalImg = graphloader::ScaleBitmap("./assets/fpbkg1.png", SCREEN_W, SCREEN_H, display);
     
-    if (!birdImg || !pipeImg[0] || !bkgImg[0] || !floorImg[0] || !pipeImg[1]|| !bkgImg[1] || !floorImg[1] || !pipeImg[2]|| !bkgImg[2] || !floorImg[2] || !loadingFont || !menuFont || !scoreFont || !smallFont) {
+    if (!birdFrames[0] || !birdFrames[1] || !birdFrames[2] || !birdFrames[3] || !pipeImg[0] || !bkgImg[0] || !floorImg[0] || !pipeImg[1]|| !bkgImg[1] || !floorImg[1] || !pipeImg[2]|| !bkgImg[2] || !floorImg[2] || !loadingFont || !menuFont || !scoreFont || !smallFont) {
         std::cout << "FALHA NA INICIALIZACAO. VERIFICAR AS ASSETS CARREGADAS." << std::endl;
         MemoryClear();
         return false;
@@ -478,18 +483,29 @@ void gamecontroller::Logic(){
         gameCrash->checkCrash(*gameBird, *gamePControl);
         gameScore->updateScore(*gameBird, *gamePControl);
     } else {
-        gameBird->Movement();
-        gameCrash->checkCrash(*gameBird, *gamePControl);
+        if (!gameCrash->getHitFloor()) {
+            gameBird->Movement();
+            gameCrash->checkCrash(*gameBird, *gamePControl);
+        } 
         if (gameCrash->getHitFloor()) { 
-            int finalScore = gameScore->getCurrentScore();
-            if (!currentPlayerNickname.empty()) {
-                int bestScore = playerManager->getHighScore(currentPlayerNickname);
-                if (finalScore > bestScore) {
-                    newRecord = true;
+            
+            gameBird->setMS(vetor(0, 0));
+            
+            if (deathTime == 0.0) {
+                deathTime = al_get_time(); 
+                
+                int finalScore = gameScore->getCurrentScore();
+                if (!currentPlayerNickname.empty()) {
+                    int bestScore = playerManager->getHighScore(currentPlayerNickname);
+                    if (finalScore > bestScore) {
+                        newRecord = true;
+                    }
+                    playerManager->updatePlayerScore(currentPlayerNickname, finalScore);
                 }
-                playerManager->updatePlayerScore(currentPlayerNickname, finalScore);
             }
-            currentState = GameState::GameOver;
+            else if (al_get_time() - deathTime > 0.3) {
+                currentState = GameState::GameOver; 
+            }
         }
     }
 }
@@ -579,7 +595,10 @@ void gamecontroller::MemoryClear(){
         if (floorImg[i]) al_destroy_bitmap(floorImg[i]); floorImg[i] = nullptr;
     }
     
-    al_destroy_bitmap(birdImg); birdImg = nullptr;
+    for (auto& frame : birdFrames ) {
+        if (frame) al_destroy_bitmap(frame);
+    }
+    birdFrames.clear();
     al_destroy_bitmap(menuPrincipalImg); menuPrincipalImg = nullptr; 
     al_destroy_font(menuFont); menuFont = nullptr;
     al_destroy_font(loadingFont); loadingFont = nullptr;

@@ -68,7 +68,8 @@ class gamecontroller {
     ALLEGRO_EVENT_QUEUE *queue;
     ALLEGRO_TIMER *timer;  
     
-    ALLEGRO_BITMAP* birdImg = nullptr;
+    std::vector<ALLEGRO_BITMAP*> birdFrames;
+        
     ALLEGRO_BITMAP* pipeImg[3] = { nullptr, nullptr, nullptr };
     ALLEGRO_BITMAP* bkgImg[3] = { nullptr, nullptr, nullptr };
     ALLEGRO_BITMAP* floorImg[3] = { nullptr, nullptr, nullptr };
@@ -103,6 +104,7 @@ class gamecontroller {
     
     int countdownValue = 0;
     double countdownStartTime = 0.0;
+    float deathTime = 0.0;
 
     void SetupNewGame();
     void StartCountdown();

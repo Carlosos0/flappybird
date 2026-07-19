@@ -1,10 +1,15 @@
 #include "ambience.hpp"
 #include "bird.hpp"
 
-bird::bird(const vetor& position, ALLEGRO_BITMAP* image, float width, float height, bool alive, float rotation) 
-: alive(alive), rotation(rotation) {
+bird::bird(const vetor& position, std::vector<ALLEGRO_BITMAP*> frames, float width, float height, bool alive, float rotation) 
+: alive(alive), rotation(rotation), frames(frames), animationTimer(0), currentFrame(0) {
     setPosition(position);
-    setImage(image);
+    
+    if (!frames.empty() && frames.size() == 4)
+    {
+        setImage(frames[0]); // asa começa pra cima
+    }
+    
     setWidth(width);
     setHeight(height);
     setMS(vetor()); 
@@ -69,6 +74,31 @@ void bird::Movement() {
     setPosition(getPosition() + getMS());
     LimitHeight();
     RotationRange();
+
+    if (alive && frames.size() == 4) {
+        animationTimer++;
+    
+        if (animationTimer > 3) {
+        animationTimer = 0;
+        currentFrame++;
+        }
+    
+        if (currentFrame > 3) {
+        currentFrame = 0;
+        }
+    
+        if (currentFrame == 0) {
+            setImage(frames[0]);
+        } else if (currentFrame == 1 || currentFrame == 3) {
+            setImage(frames[1]);
+        } else if (currentFrame == 2) {
+            setImage(frames[2]);
+        } 
+    } else if (!alive && frames.size() == 4) {
+        setImage(frames[3]);
+    }
+    
+    
 }
 
 void bird::JumpAct() {

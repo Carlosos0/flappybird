@@ -2,7 +2,7 @@
 #define BIRD_H
 
 #include <memory>
-
+#include <vector>
 #include "ambience.hpp"
 #include "gameobject.hpp"
 
@@ -15,11 +15,14 @@ private:
     float rotation;
     vetor jump = vetor(0, -8.52f);
 
+    std::vector<ALLEGRO_BITMAP*> frames;
+    int animationTimer;
+    int currentFrame;
     std::shared_ptr<ambience> planet;
 
 public:
 
-    bird(const vetor& position, ALLEGRO_BITMAP* image, float width, float heigth, bool alive, float rotation);
+    bird(const vetor& position, std::vector<ALLEGRO_BITMAP*> frames, float width, float heigth, bool alive, float rotation);
     ~bird();
 
     bool getAlive() const;
