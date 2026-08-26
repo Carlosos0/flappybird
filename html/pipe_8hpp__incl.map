@@ -1,9 +1,0 @@
-<map id="include/pipe.hpp" name="include/pipe.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="75,5,205,31"/>
-<area shape="rect" id="Node000002" href="$gameobject_8hpp.html" title=" " alt="" coords="77,79,203,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,31,143,65,137,65,137,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,141,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,106,95,144,92,140,127,103"/>
-<area shape="rect" id="Node000004" href="$vetor_8hpp.html" title=" " alt="" coords="165,152,248,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="153,103,188,140,185,144,149,106"/>
-</map>

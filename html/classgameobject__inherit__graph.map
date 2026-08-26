@@ -1,9 +1,0 @@
-<map id="gameobject" name="gameobject">
-<area shape="rect" id="Node000001" title=" " alt="" coords="55,5,153,31"/>
-<area shape="rect" id="Node000002" href="$classPipe.html" title=" " alt="" coords="5,79,56,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,42,44,80,41,77,80,38"/>
-<area shape="rect" id="Node000003" href="$classbird.html" title=" " alt="" coords="81,79,127,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,44,107,79,101,79,101,44"/>
-<area shape="rect" id="Node000004" href="$classfloor.html" title=" " alt="" coords="152,79,203,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,38,167,77,164,80,124,42"/>
-</map>

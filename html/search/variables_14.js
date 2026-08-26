@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['width_0',['width',['../classgameobject.html#a333dbf2c9e184bd1a8b950729a84da74',1,'gameobject::width'],['../structButton.html#aadac7dd7b0a0350f354a947ab096c532',1,'Button::width']]]
-];

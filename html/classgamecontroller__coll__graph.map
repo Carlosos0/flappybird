@@ -1,7 +1,0 @@
-<map id="gamecontroller" name="gamecontroller">
-<area shape="rect" id="Node000001" title=" " alt="" coords="52,93,173,119"/>
-<area shape="rect" id="Node000002" href="$classgraphloader.html" title=" " alt="" coords="5,5,105,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,44,59,68,70,81,85,91,82,95,67,85,54,71,49,45"/>
-<area shape="rect" id="Node000003" href="$classinput.html" title=" " alt="" coords="144,5,199,31"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,44,144,71,125,95,121,92,140,68,156,42"/>
-</map>
