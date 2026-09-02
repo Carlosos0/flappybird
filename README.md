@@ -23,7 +23,7 @@ make test
 ## Documentação técnica
 
 Documentação completa gerada com Doxygen (arquitetura, classes, métodos):
-**[carloseca.github.io/flappybird](https://carlosos0.github.io/flappybird/)**
+**[carlosos0.github.io/flappybird](https://carlosos0.github.io/flappybird/)**
 
 Para gerar localmente:
 ```bash
