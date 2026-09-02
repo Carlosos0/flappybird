@@ -1,9 +1,8 @@
 # FLAPPY BIRD
 
-Réplica de Flappy Bird em C++ com Allegro 5, com arquitetura orientada a
-objetos (polimorfismo), máquina de estados com 14 estados, colisão por
-bounding boxes, geração procedural de obstáculos e sistema de
-cadastro/ranking de jogadores com persistência em arquivo.
+Recriação do jogo Flappy Bird em C++ com a biblioteca gráfica Allegro 5, com arquitetura orientada a objetos baseada em
+polimorfismo, máquina de estados, colisão por bounding boxes com hitboxes diferenciadas, geração procedural de obstáculos,
+sistema de cadastro/ranking de jogadores e mapas variados.
 
 ## Como rodar
 
