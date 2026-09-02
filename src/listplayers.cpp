@@ -1,7 +1,7 @@
 #include "listplayers.hpp"
 
 ListPlayers::ListPlayers(ALLEGRO_FONT* a_font, PlayerManager* manager) 
-    : font(a_font), playerManager(manager), nextState(MenuState::None), scrollOffset(0) {
+    : playerManager(manager), font(a_font), nextState(MenuState::None), scrollOffset(0) {
     Reset();
 }
 

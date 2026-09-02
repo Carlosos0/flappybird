@@ -551,6 +551,7 @@ void gamecontroller::Render(){
         }
         
         case GameState::OptionsScreen:
+            gameLoader.DrawOptionsMenu(scoreFont);
             break;
         
         case GameState::Playing:
@@ -590,9 +591,12 @@ void gamecontroller::MemoryClear(){
     
     for (int i = 0; i < 3; i++)
     {
-        if (bkgImg[i]) al_destroy_bitmap(bkgImg[i]); bkgImg[i] = nullptr;
-        if (pipeImg[i]) al_destroy_bitmap(pipeImg[i]); pipeImg[i] = nullptr;
-        if (floorImg[i]) al_destroy_bitmap(floorImg[i]); floorImg[i] = nullptr;
+        if (bkgImg[i]) { al_destroy_bitmap(bkgImg[i]); } 
+        bkgImg[i] = nullptr;
+        if (pipeImg[i]) { al_destroy_bitmap(pipeImg[i]); } 
+        pipeImg[i] = nullptr;
+        if (floorImg[i]) { al_destroy_bitmap(floorImg[i]); } 
+        floorImg[i] = nullptr;
     }
     
     for (auto& frame : birdFrames ) {

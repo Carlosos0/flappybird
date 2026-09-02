@@ -475,3 +475,11 @@ void graphloader::DrawStatusMenu(const StatusMenu& menu, const Player& player) {
 
     DrawButton(menu.getBtnVoltar(), font);
 }
+
+void graphloader::DrawOptionsMenu(ALLEGRO_FONT* font) {
+    al_clear_to_color(al_map_rgb(0, 0, 0));
+
+    if (font) {
+        al_draw_text(font, al_map_rgb(255, 255, 255), 400, 250, ALLEGRO_ALIGN_CENTER, "EM CONSTRUÇÃO!");
+    }
+}

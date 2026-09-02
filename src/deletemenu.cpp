@@ -1,6 +1,12 @@
 #include <iostream>
 #include "deletemenu.hpp"
 
+void DeleteMenu::refreshPlayerList() {
+    if (playerManager) {
+        playerList = playerManager->getRankedPlayers();
+    }
+}
+
 DeleteMenu::DeleteMenu(ALLEGRO_FONT* a_font, PlayerManager* manager)
     : playerManager(manager), font(a_font), nextState(MenuState::None) {
     confirmButton = {275, 320, 100, 40, "Sim", MenuState::None};
@@ -15,12 +21,6 @@ void DeleteMenu::Reset() {
     highlightedIndex = -1;
     nicknameToDelete = "";
     refreshPlayerList();
-}
-
-void DeleteMenu::refreshPlayerList() {
-    if (playerManager) {
-        playerList = playerManager->getRankedPlayers();
-    }
 }
 
 void DeleteMenu::ProcessEvent(const ALLEGRO_EVENT& event) {
@@ -53,8 +53,9 @@ void DeleteMenu::ProcessEvent(const ALLEGRO_EVENT& event) {
         if (event.type == ALLEGRO_EVENT_MOUSE_AXES) {
             highlightedIndex = -1;
             for (size_t i = 0; i < playerList.size(); ++i) {
+                int offset = static_cast<int>(i) * 40;
                 if (event.mouse.x > 600 && event.mouse.x < 700 &&
-                    event.mouse.y > 150 + (i * 40) && event.mouse.y < 190 + (i * 40)) {
+                    event.mouse.y > 150 + offset && event.mouse.y < 190 + offset) {
                     highlightedIndex = i;
                     break;
                 }

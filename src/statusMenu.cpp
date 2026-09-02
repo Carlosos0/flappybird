@@ -1,6 +1,7 @@
 #include "statusMenu.hpp"
 
 StatusMenu::StatusMenu(ALLEGRO_DISPLAY* display) : nextState(MenuState::None) {
+    (void) display;
     font = al_load_font("./assets/PressStart2P-Regular.ttf", 20, 0);
     if (!font) {
         printf("ERRO: Nao carregou a fonte do menu de status.\n");

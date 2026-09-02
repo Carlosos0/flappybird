@@ -73,7 +73,7 @@ bool PlayerManager::addNewPlayer(const std::string& name, const std::string& nic
     }
     time_t now = time(0);
     tm* ltm = localtime(&now);
-    char dateBuffer[20];
+    char dateBuffer[32];
     snprintf(dateBuffer, sizeof(dateBuffer), "%02d/%02d/%04d", ltm->tm_mday, ltm->tm_mon + 1, 1900 + ltm->tm_year);
     Player p = {name, nickname, 0, 0, {0, 0, 0}, std::string(dateBuffer)};
     players.push_back(p);

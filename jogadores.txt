@@ -1,6 +1,1 @@
-Carlos;carlso;27;377;158;27;12;PRIMÓRDIO
-ksren2;kaka;5;15;0;0;0;PRIMÓRDIO
-joao;jp;17;20;0;0;0;SEMPRE!<3
-andre;dede;14;8;0;0;0;SEMPRE!<3
-sabrina;sah;7;3;0;0;0;SEMPRE!<3
-Liz;Rene;8;3;0;0;0;SEMPRE!<3
+Carlos;carlso;5;3;3;0;0;02/09/2026
