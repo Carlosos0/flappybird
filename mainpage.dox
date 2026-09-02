@@ -1,0 +1,42 @@
+/**
+ * @mainpage Flappy Bird — Documentação Técnica
+ *
+ * @section intro_sec Visão geral
+ *
+ * Clone de Flappy Bird desenvolvido em C++ com a biblioteca gráfica
+ * Allegro 5, com arquitetura orientada a objetos, física baseada em
+ * gravidade, detecção de colisão por bounding boxes, geração procedural
+ * de obstáculos, máquina de estados com 14 estados distintos, e um
+ * sistema de cadastro e ranking de jogadores com persistência em arquivo.
+ *
+ * @section arch_sec Arquitetura
+ *
+ * - gameobject: classe base abstrata de todos os objetos do jogo, com
+ *   Movement() como método virtual puro.
+ *   - bird: física de queda e pulo, animação de sprites.
+ *   - Pipe: deslocamento horizontal constante (agrupado em doublepipes).
+ *   - floor: rolagem contínua de textura.
+ * - Crash: detecção de colisão (chão e canos, com hitboxes diferenciadas
+ *   para cabeça e corpo do cano).
+ * - pipeControl: geração procedural e ciclo de vida dos pares de canos.
+ * - score: cálculo de pontuação durante a partida.
+ * - PlayerManager: cadastro, ranking e persistência de jogadores em arquivo.
+ * - Menu (interface) e suas implementações (PrincipalMenu, GameOverMenu,
+ *   NicknameInput, Cadastro, ListPlayers, DeleteMenu, LoggedMenu, MapMenu,
+ *   StatusMenu, ExitConfirmMenu): telas de navegação do jogo.
+ * - graphloader: carregamento e desenho de todos os elementos gráficos.
+ * - gamecontroller: orquestrador central, com a máquina de estados
+ *   (GameState) que controla todo o fluxo da aplicação.
+ *
+ * @section build_sec Build
+ *
+ * @code
+ * make all
+ * ./bin/tp.out
+ * @endcode
+ *
+ * @section test_sec Testes
+ *
+ * O projeto conta com testes unitários (framework doctest) cobrindo os
+ * componentes centrais do jogo, localizados na pasta `tests/`.
+ */

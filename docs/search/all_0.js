@@ -7,5 +7,6 @@ var searchData=
   ['ambience_2ecpp_4',['ambience.cpp',['../ambience_8cpp.html',1,'']]],
   ['ambience_2ehpp_5',['ambience.hpp',['../ambience_8hpp.html',1,'']]],
   ['animationtimer_6',['animationTimer',['../classbird.html#a8b547a6b99a952ce2153df23827d1134',1,'bird']]],
-  ['apelido_5fatual_7',['apelido_atual',['../classCadastro.html#a8588e8cab6cd5cb0d9930ead31d3064b',1,'Cadastro']]]
+  ['apelido_5fatual_7',['apelido_atual',['../classCadastro.html#a8588e8cab6cd5cb0d9930ead31d3064b',1,'Cadastro']]],
+  ['arquitetura_8',['Arquitetura',['../index.html#arch_sec',1,'']]]
 ];
